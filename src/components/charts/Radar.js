@@ -13,6 +13,10 @@ export default function Radar() {
 		<ResponsiveRadar
 			data={RadarData}
 			keys={["chardonay", "carmenere", "syrah"]}
+			theme={{
+				fontFamily: "Poppins",
+				fontSize: "0.8rem"
+			}}
 			indexBy="taste"
 			valueFormat=">-.2f"
 			margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
