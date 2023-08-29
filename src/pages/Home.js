@@ -1,5 +1,7 @@
 import React from "react";
 import Line from "../components/charts/Line";
+import Pie from "../components/charts/Pie";
+import World from "../components/charts/World";
 
 export default function Home() {
 	return (
@@ -31,10 +33,10 @@ export default function Home() {
 					This Week
 				</h2>
 				<div class="col-span-4 m-4 p-4 bg-gray-300 rounded-xl ">
-					<Line />
+					<Pie />
 				</div>
 				<div class="col-span-4 m-4 p-4 bg-gray-300 rounded-xl ">
-					<Line />
+					<Pie />
 				</div>
 				<div class="col-span-4 m-4 p-4 bg-gray-300 rounded-xl ">
 					<Line />
