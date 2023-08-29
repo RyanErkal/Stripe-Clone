@@ -59,7 +59,7 @@ export default function Payments() {
 					Clear
 				</button>
 			</div>
-			<table class="table-auto w-full">
+			<table class="table-fixed w-full">
 				<thead>
 					<tr class="text-center">
 						<th>NAME</th>
