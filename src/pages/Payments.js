@@ -1,9 +1,8 @@
 import React from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import PaymentData from "../data/PaymentData.json";
 
 export default function Payments() {
-	const params = useParams();
 	const [searchParams, setSearchParams] = useSearchParams();
 
 	const filter = searchParams.get("status");
