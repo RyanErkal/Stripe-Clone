@@ -13,7 +13,7 @@ export default function Sidebar() {
 	};
 
 	const inactiveStyle = {
-		color: "#f1f5f9",
+		color: "#111827",
 		margin: "2px",
 		padding: "4px 4px 4px 16px",
 		fontWeight: "bold",
@@ -26,7 +26,6 @@ export default function Sidebar() {
 			<div class="p-2 flex flex-col">
 				<NavLink
 					to="/"
-					class="m-2 p-2 font-bold w-full text-center"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
 					}
@@ -37,32 +36,28 @@ export default function Sidebar() {
 					to="payments"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
-					}
-					class="m-2 font-bold">
+					}>
 					Payments
 				</NavLink>
 				<NavLink
 					to="balances"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
-					}
-					class="m-2 font-bold">
+					}>
 					Balances
 				</NavLink>
 				<NavLink
 					to="customers"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
-					}
-					class="m-2 font-bold">
+					}>
 					Customers
 				</NavLink>
 				<NavLink
 					to="settings"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
-					}
-					class="m-2 font-bold">
+					}>
 					Settings
 				</NavLink>
 			</div>

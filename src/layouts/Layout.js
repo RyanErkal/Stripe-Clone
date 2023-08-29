@@ -8,10 +8,10 @@ export default function Layout() {
 		<>
 			<Header />
 			<div class="grid grid-cols-10 bg-gray-700 h-screen">
-				<div class="col-span-1 bg-gray-600">
+				<div class="col-span-1 bg-gray-200">
 					<Sidebar />
 				</div>
-				<div class="col-span-9 bg-gray-500">
+				<div class="col-span-9 bg-gray-100">
 					<Outlet />
 				</div>
 			</div>
