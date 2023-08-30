@@ -40,25 +40,25 @@ export default function Payments() {
 
 	return (
 		<>
-			<h1 class="text-3xl font-bold p-4">Dashboard</h1>
-			<div>
+			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
+			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
-					class="bg-green-200 p-2 m-2 border border-green-300 rounded-full">
+					class="bg-green-200 px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 transition-all">
 					Succeeded
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", "failed")}
-					class="bg-red-200 px-4 py-2 m-2 border border-red-300 rounded-full">
+					class="bg-red-200 px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 transition-all">
 					Failed
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", null)}
-					class="bg-gray-200 p-2 m-2 border border-gray-300 rounded-full">
+					class="bg-gray-200 px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 transition-all">
 					Clear
 				</button>
 			</div>
-			<table class="table-fixed w-full">
+			<table class="table-fixed w-full mt-4">
 				<thead>
 					<tr class="text-center">
 						<th>NAME</th>
