@@ -22,8 +22,8 @@ export default function Sidebar() {
 	};
 
 	return (
-		<div class="h-full">
-			<div class="p-2 flex flex-col">
+		<div class="">
+			<div class="p-2 flex flex-row lg:flex-col h-min lg:h-full">
 				<NavLink
 					to="/"
 					style={({ isActive }) =>
@@ -53,13 +53,13 @@ export default function Sidebar() {
 					}>
 					Customers
 				</NavLink>
-				<NavLink
+				{/* <NavLink
 					to="settings"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
 					}>
 					Settings
-				</NavLink>
+				</NavLink> */}
 			</div>
 		</div>
 	);
