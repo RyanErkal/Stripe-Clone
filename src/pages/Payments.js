@@ -12,7 +12,7 @@ export default function Payments() {
 		: PaymentData;
 
 	const paymentList = filteredPayments.map((payment) => (
-		<tr class="text-center">
+		<tr class="text-center" key={payment.name}>
 			<td class="p-2">{payment.name}</td>
 			<td>£{payment.amount}</td>
 			<td

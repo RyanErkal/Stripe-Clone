@@ -4,7 +4,7 @@ import CustomerData from "../data/CustomerData.json";
 
 export default function Customers() {
 	const customerList = CustomerData.map((customer) => (
-		<tr class="text-center hover:bg-purple-100">
+		<tr class="text-center hover:bg-purple-100" key={customer.name}>
 			<td class="p-2 hover:font-bold">
 				<Link to={`/customers/${customer.name}`} state={customer}>
 					{customer.name}

@@ -5,7 +5,7 @@ export default function CustomerDetail() {
 	const customer = useLocation().state;
 
 	const payments = customer.payments.map((payment) => (
-		<tr class="text-center hover:bg-purple-100">
+		<tr class="text-center hover:bg-purple-100" key={payment.amount}>
 			<td>£{payment.amount}</td>
 			<td>{payment.status}</td>
 			<td>{payment.date}</td>
