@@ -13,6 +13,7 @@ export default function Customers() {
 			<td>{customer.email}</td>
 			<td>{customer.payments.length}</td>
 			<td>
+				£
 				{customer.payments.reduce(
 					(accumulator, currentValue) =>
 						accumulator + currentValue.amount,
