@@ -12,18 +12,26 @@ export default function Payments() {
 		: PaymentData;
 
 	const paymentList = filteredPayments.map((payment) => (
-		<tr class="text-center" key={payment.name}>
-			<td class="p-2">{payment.name}</td>
-			<td>£{payment.amount}</td>
-			<td
-				class={
-					payment.status === "succeeded"
-						? "text-green-600 font-bold bg-green-100"
-						: "text-red-600 font-bold bg-red-100"
-				}>
-				{payment.status}
-			</td>
+		<tr class="text-left" key={payment.name}>
+			<td class="p-4">{payment.order}</td>
 			<td>{payment.date}</td>
+			<td>{payment.name}</td>
+			<td>£{payment.amount}</td>
+			<td>
+				<div
+					class={
+						payment.status === "succeeded"
+							? "text-green-600 font-bold bg-green-200 py-2 px-4 w-min rounded-full text-center"
+							: payment.status === "failed"
+							? "text-red-600 font-bold bg-red-200 py-2 px-4 w-min rounded-full text-center"
+							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 w-min rounded-full text-center"
+					}>
+					{payment.status}
+				</div>
+			</td>
+			<td>{payment.location}</td>
+			<td>{payment.items}</td>
+			<td>{payment.type}</td>
 		</tr>
 	));
 
@@ -44,27 +52,36 @@ export default function Payments() {
 			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
-					class="bg-green-200 px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 transition-all">
+					class="bg-green-200 px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 transition-all hover:shadow-xl">
 					Succeeded
 				</button>
 				<button
+					onClick={() => handleFilterChange("status", "processing")}
+					class="bg-orange-200 px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 transition-all hover:shadow-xl">
+					Processing
+				</button>
+				<button
 					onClick={() => handleFilterChange("status", "failed")}
-					class="bg-red-200 px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 transition-all">
+					class="bg-red-200 px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 transition-all hover:shadow-xl">
 					Failed
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", null)}
-					class="bg-gray-200 px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 transition-all">
+					class="bg-gray-200 px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 transition-all hover:shadow-xl">
 					Clear
 				</button>
 			</div>
-			<table class="table-fixed w-full mt-4">
+			<table class="table-fixed w-full m-6">
 				<thead>
-					<tr class="text-center">
+					<tr class="text-left">
+						<th>ORDER</th>
+						<th>DATE</th>
 						<th>NAME</th>
 						<th>AMOUNT</th>
 						<th>STATUS</th>
-						<th>DATE</th>
+						<th>LOCATION</th>
+						<th>ITEMS</th>
+						<th>PAYMENT TYPE</th>
 					</tr>
 				</thead>
 				<tbody>{paymentList}</tbody>

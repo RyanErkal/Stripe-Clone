@@ -7,11 +7,11 @@ export default function Layout() {
 	return (
 		<>
 			<Header />
-			<div class="grid grid-cols-10 bg-gray-700 h-screen">
-				<div class="col-span-10 h-fit lg:h-full lg:col-span-1 bg-gray-200">
+			<div class="flex flex-col xl:flex-row bg-gray-100 h-screen">
+				<div class="h-content bg-gray-100 shadow-xl">
 					<Sidebar />
 				</div>
-				<div class="col-span-10 lg:col-span-9 lg:h-full bg-gray-100">
+				<div class="w-full h-full bg-gray-100">
 					<Outlet />
 				</div>
 			</div>
