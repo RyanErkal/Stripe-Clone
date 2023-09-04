@@ -120,7 +120,7 @@ export default function Home() {
 					</Section>
 				</div>
 				{/* Sales vs Refunds */}
-				<div class="col-span-12 xl:col-span-6 h-96">
+				<div class="col-span-12 xl:col-span-8 h-96">
 					<Section
 						title="Sales vs Refunds"
 						textposition="start"
@@ -130,7 +130,7 @@ export default function Home() {
 						<ReNegBar />
 					</Section>
 				</div>
-				<div class="col-span-12 xl:col-span-6 h-96">
+				<div class="col-span-12 xl:col-span-4 h-96">
 					<Section title="Balances" textposition="start">
 						<div class="flex flex-col h-full justify-start items-start">
 							<h3 class="text-l font-bold">GBP Balance</h3>
