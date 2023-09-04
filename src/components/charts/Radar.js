@@ -19,7 +19,7 @@ export default function Radar() {
 			}}
 			indexBy="taste"
 			valueFormat=">-.2f"
-			margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+			margin={{ top: 80, right: 0, bottom: 60, left: 60 }}
 			borderColor={{ from: "color" }}
 			gridLabelOffset={36}
 			enableDots={false}

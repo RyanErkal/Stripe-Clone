@@ -14,7 +14,7 @@ function Line(LineData) {
 	return (
 		<ResponsiveLine
 			data={data}
-			margin={{ top: 50, right: 110, bottom: 0, left: 50 }}
+			margin={{ top: 50, right: 110, bottom: 0, left: 0 }}
 			xScale={{ type: "point" }}
 			yScale={{
 				type: "linear",

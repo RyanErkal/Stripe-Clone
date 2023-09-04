@@ -18,7 +18,7 @@ export default function Bar() {
 				fontFamily: "Poppins",
 				fontSize: "0.8rem"
 			}}
-			margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+			margin={{ top: 50, right: 110, bottom: 0, left: 0 }}
 			layout="horizontal"
 			valueScale={{ type: "linear" }}
 			indexScale={{ type: "band", round: true }}

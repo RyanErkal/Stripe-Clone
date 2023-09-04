@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
 	return (
-		<div class="bg-purple-600">
+		<div class="bg-purple-600 min-w-max">
 			<div class="flex justify-between items-center px-4 py-2">
 				<div class="flex items-center">
 					<h1 class="text-white text-2xl font-bold">Stripe</h1>

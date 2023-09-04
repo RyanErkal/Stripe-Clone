@@ -71,10 +71,10 @@ export default function Payments() {
 					Clear
 				</button>
 			</div>
-			<table class="table-fixed w-full m-6">
+			<table class="table-auto min-w-max lg:w-full m-6">
 				<thead>
 					<tr class="text-left">
-						<th>ORDER</th>
+						<th class="pl-4">ORDER</th>
 						<th>DATE</th>
 						<th>NAME</th>
 						<th>AMOUNT</th>

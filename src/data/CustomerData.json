@@ -1,136 +1,126 @@
 [
     {
-        "name": "John",
-        "email": "john@john.com",
-        "address": "123 Main St",
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "location": "London",
         "subscription": {
             "plan": "basic",
             "status": "active",
             "date": "2019-01-01"
         },
-        "payments": [
+        "orders": [
             {
-                "amount": 100,
+                "amount": 1200,
                 "status": "succeeded",
                 "date": "2019-01-01"
             },
             {
-                "amount": 200,
+                "amount": 2300,
                 "status": "succeeded",
                 "date": "2019-02-01"
             },
             {
-                "amount": 300,
+                "amount": 3450,
                 "status": "succeeded",
                 "date": "2019-03-01"
             }
         ]
     },
     {
-        "name": "Jane",
-        "email": "jane@jane.com",
-        "address": "123 Long St",
+        "name": "Luke Skywalker",
+        "email": "lukeskywalker@hotmail.com",
+        "location": "Paris",
+        "subscription": {
+            "plan": "basic",
+            "status": "cancelled",
+            "date": "2019-01-01"
+        },
+        "orders": [
+            {
+                "amount": 5200,
+                "status": "succeeded",
+                "date": "2019-01-01"
+            }
+        ]
+    },
+    {
+        "name": "Ben Kenobi",
+        "email": "benkenobi@aol.com",
+        "location": "Madrid",
         "subscription": {
             "plan": "basic",
             "status": "active",
             "date": "2019-01-01"
         },
-        "payments": [
+        "orders": [
             {
-                "amount": 200,
+                "amount": 1300,
                 "status": "succeeded",
                 "date": "2019-01-01"
             },
             {
-                "amount": 100,
+                "amount": 2550,
                 "status": "succeeded",
                 "date": "2019-02-01"
             },
             {
-                "amount": 300,
+                "amount": 1250,
+                "status": "succeeded",
+                "date": "2019-03-01"
+            },
+            {
+                "amount": 1050,
                 "status": "succeeded",
                 "date": "2019-03-01"
             }
         ]
     },
     {
-        "name": "Ben",
-        "email": "ben@ben.com",
-        "address": "123 Short St",
+        "name": "Darth Vader",
+        "email": "darthvader@deathstar.gov",
+        "location": "Ohio",
         "subscription": {
             "plan": "basic",
             "status": "active",
             "date": "2019-01-01"
         },
-        "payments": [
+        "orders": [
             {
-                "amount": 300,
+                "amount": 2500,
                 "status": "succeeded",
                 "date": "2019-01-01"
             },
             {
-                "amount": 200,
+                "amount": 1500,
                 "status": "succeeded",
                 "date": "2019-02-01"
             },
             {
-                "amount": 100,
+                "amount": 3250,
                 "status": "succeeded",
                 "date": "2019-03-01"
             }
         ]
     },
     {
-        "name": "Kyle",
-        "email": "kyle@kyle.com",
-        "address": "123 Wide St",
+        "name": "Qui Gon Jinn",
+        "email": "quigonjinn@gmail.com",
+        "location": "New York",
         "subscription": {
             "plan": "basic",
             "status": "active",
             "date": "2019-01-01"
         },
-        "payments": [
+        "orders": [
             {
-                "amount": 200,
+                "amount": 3500,
                 "status": "succeeded",
                 "date": "2019-01-01"
             },
             {
-                "amount": 100,
+                "amount": 1000,
                 "status": "succeeded",
                 "date": "2019-02-01"
-            },
-            {
-                "amount": 300,
-                "status": "succeeded",
-                "date": "2019-03-01"
-            }
-        ]
-    },
-    {
-        "name": "Bob",
-        "email": "bob@bob.com",
-        "address": "123 Narrow St",
-        "subscription": {
-            "plan": "basic",
-            "status": "active",
-            "date": "2019-01-01"
-        },
-        "payments": [
-            {
-                "amount": 300,
-                "status": "succeeded",
-                "date": "2019-01-01"
-            },
-            {
-                "amount": 100,
-                "status": "succeeded",
-                "date": "2019-02-01"
-            },
-            {
-                "amount": 200,
-                "status": "succeeded",
-                "date": "2019-03-01"
             }
         ]
     }
