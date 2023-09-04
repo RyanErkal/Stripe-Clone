@@ -39,6 +39,52 @@ export default function Customers() {
 				</thead>
 				<tbody>{customerList}</tbody>
 			</table>
+			<div class="flex justify-between items-center my-4 mx-8">
+				<div class="basis-1/2 justify-start">
+					<span class="text-sm text-gray-700 dark:text-gray-400">
+						Showing <span class="font-semibold">1</span> to{" "}
+						<span class="font-semibold">5</span> of{" "}
+						<span class="font-semibold">100</span> results
+					</span>
+				</div>
+
+				<div class="flex justify-end basis-1/2 mt-2 xs:mt-0">
+					<button class="flex items-center justify-center p-2 mx-2 text-sm font-medium bg-gray-600 text-gray-100 hover:text-purple-300 rounded-lg">
+						<svg
+							class="w-3.5 h-3.5 mr-2"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 14 10">
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 5H1m0 0 4 4M1 5l4-4"
+							/>
+						</svg>
+						Prev
+					</button>
+					<button class="flex items-center justify-center p-2 mx-2 text-sm font-medium bg-gray-600 text-gray-100 hover:text-purple-300 rounded-lg">
+						Next
+						<svg
+							class="w-3.5 h-3.5 ml-2"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 14 10">
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M1 5h12m0 0L9 1m4 4L9 9"
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
 		</>
 	);
 }
