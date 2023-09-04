@@ -85,39 +85,39 @@ export default function Home() {
 				{/* Recent Payments */}
 				<div class="col-span-12 xl:col-span-8 h-96">
 					<Section title="Recent Payments" textposition="start">
-						<table class="w-full h-full">
+						<table class="w-full h-full text-left">
 							<thead>
 								<tr>
-									<th class="px-4 py-2">Product</th>
-									<th class="px-4 py-2">Customer</th>
-									<th class="px-4 py-2">Amount</th>
+									<th class="py-2">Product</th>
+									<th class="py-2">Customer</th>
+									<th class="py-2">Amount</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="border px-4 py-2">Basic</td>
-									<td class="border px-4 py-2">John Doe</td>
-									<td class="border px-4 py-2">£24,780</td>
+									<td class="py-2">Basic</td>
+									<td class="py-2">John Doe</td>
+									<td class="py-2">£24,780</td>
 								</tr>
 								<tr>
-									<td class="border px-4 py-2">Advanced</td>
-									<td class="border px-4 py-2">Jane Doe</td>
-									<td class="border px-4 py-2">£11,340</td>
+									<td class="py-2">Advanced</td>
+									<td class="py-2">Jane Doe</td>
+									<td class="py-2">£11,340</td>
 								</tr>
 								<tr>
-									<td class="border px-4 py-2">Premium</td>
-									<td class="border px-4 py-2">John Smith</td>
-									<td class="border px-4 py-2">£36,920</td>
+									<td class="py-2">Premium</td>
+									<td class="py-2">John Smith</td>
+									<td class="py-2">£36,920</td>
 								</tr>
 								<tr>
-									<td class="border px-4 py-2">Basic</td>
-									<td class="border px-4 py-2">Dohn Joe</td>
-									<td class="border px-4 py-2">£14,870</td>
+									<td class="py-2">Basic</td>
+									<td class="py-2">Dohn Joe</td>
+									<td class="py-2">£14,870</td>
 								</tr>
 								<tr>
-									<td class="border px-4 py-2">Advanced</td>
-									<td class="border px-4 py-2">Mohn Soe</td>
-									<td class="border px-4 py-2">£21,540</td>
+									<td class="py-2">Advanced</td>
+									<td class="py-2">Mohn Soe</td>
+									<td class="py-2">£21,540</td>
 								</tr>
 							</tbody>
 						</table>

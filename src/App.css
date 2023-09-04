@@ -10,7 +10,10 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
-table {
+table,
+tr,
+td,
+th {
 	border: none;
 	background-color: "red";
 }
