@@ -3,32 +3,32 @@ import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
 	{
-		uv: 4000,
-		pv: 2400
+		"This Week": 4000,
+		"Last Week": 2400
 	},
 	{
-		uv: 3000,
-		pv: 1398
+		"This Week": 3000,
+		"Last Week": 1398
 	},
 	{
-		uv: 2000,
-		pv: 9800
+		"This Week": 2000,
+		"Last Week": 9800
 	},
 	{
-		uv: 2780,
-		pv: 3908
+		"This Week": 2780,
+		"Last Week": 3908
 	},
 	{
-		uv: 1890,
-		pv: 4800
+		"This Week": 1890,
+		"Last Week": 4800
 	},
 	{
-		uv: 2390,
-		pv: 3800
+		"This Week": 2390,
+		"Last Week": 3800
 	},
 	{
-		uv: 3490,
-		pv: 4300
+		"This Week": 3490,
+		"Last Week": 4300
 	}
 ];
 
@@ -40,17 +40,17 @@ export default function ReBar() {
 				layout="horizontal"
 				margin={{
 					top: 20,
-					right: 4,
+					right: 0,
 					left: -8,
-					bottom: 20
+					bottom: 0
 				}}>
 				{/* <CartesianGrid strokeDasharray="3 3" /> */}
 				{/* <XAxis type="number" />
 				<YAxis type="category" /> */}
 				<Tooltip />
 				{/* <Legend /> */}
-				<Bar dataKey="pv" fill="#c084fc" />
-				<Bar dataKey="uv" fill="#9ca3af" />
+				<Bar dataKey="This Week" fill="#c084fc" />
+				<Bar dataKey="Last Week" fill="#9ca3af" />
 			</BarChart>
 		</ResponsiveContainer>
 	);

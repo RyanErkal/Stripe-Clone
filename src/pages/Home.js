@@ -9,6 +9,7 @@ import ReLine from "../components/charts/ReLine";
 import Section from "../components/Section";
 import ReSimpleArea from "../components/charts/ReSimpleArea";
 import RePie from "../components/charts/RePie";
+import ReNegBar from "../components/charts/ReNegBar";
 import "../App.css";
 
 export default function Home() {
@@ -123,43 +124,33 @@ export default function Home() {
 						</table>
 					</Section>
 				</div>
-
-				{/* <h3 class="text-l font-bold">GBP Balance</h3>
-					<p>£69,420</p>
-					<p class="text-sm text-gray-500">
-						Last updated 2 minutes ago
-					</p>
-					<br />
-					<h3 class="text-l font-bold">Payouts</h3>
-					<p>£1234</p>
-					<p class="text-sm text-gray-500">
-						Last updated 2 minutes ago
-					</p> */}
-			</div>
-			{/* This Week */}
-			<div class="grid grid-cols-12 h-1/2 m-4 bg-gray-100 rounded-2xl shadow-xl">
-				<h2 class="col-span-12 text-2xl font-bold mt-4 p-4">
-					This Week
-				</h2>
-				<div class="col-span-12 xl:col-span-4 h-96 m-4 p-4 bg-gray-100 rounded-xl shadow-xl">
-					<h3 class="text-l font-bold">Products Sold</h3>
-					<div class="h-full">
-						<ReBar />
-					</div>
+				{/* Sales vs Refunds */}
+				<div class="col-span-12 xl:col-span-6 h-96">
+					<Section
+						title="Sales vs Refunds"
+						textposition="start"
+						amount="£7,320"
+						percentage="+12%"
+						color="green">
+						<ReNegBar />
+					</Section>
 				</div>
-				<div class="col-span-12 xl:col-span-4 h-96 m-4 p-4 bg-gray-100 rounded-xl shadow-xl">
-					<h3 class="text-l font-bold absolute">Payments</h3>
-					<Pie />
-				</div>
-				<div class="col-span-12 xl:col-span-4 h-96 m-4 p-4 bg-gray-100 rounded-xl shadow-xl">
-					<h3 class="text-l font-bold absolute">Attributes</h3>
-					<Radar />
-				</div>
-				<div class="col-span-12 xl:col-span-4 h-96 m-4 p-4 bg-gray-100 rounded-xl shadow-xl">
-					<ReBar />
-				</div>
-				<div class="col-span-12 xl:col-span-4 h-96 m-4 p-4 bg-gray-100 rounded-xl shadow-xl">
-					<ReArea />
+				<div class="col-span-12 xl:col-span-6 h-96">
+					<Section title="Balances" textposition="start">
+						<div class="flex flex-col h-full justify-start items-start">
+							<h3 class="text-l font-bold">GBP Balance</h3>
+							<p>£69,420</p>
+							<p class="text-sm text-gray-500">
+								Last updated 2 minutes ago
+							</p>
+							<br />
+							<h3 class="text-l font-bold">Payouts</h3>
+							<p>£1234</p>
+							<p class="text-sm text-gray-500">
+								Last updated 2 minutes ago
+							</p>
+						</div>
+					</Section>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,11 @@
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
+import {
+	PieChart,
+	Pie,
+	Cell,
+	ResponsiveContainer,
+	Tooltip,
+	Label
+} from "recharts";
 
 const data = [
 	{ name: "Product A", value: 500 },
