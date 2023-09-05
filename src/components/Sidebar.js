@@ -59,13 +59,13 @@ export default function Sidebar() {
 					Balances
 				</NavLink>
 
-				{/* <NavLink
+				<NavLink
 					to="settings"
 					style={({ isActive }) =>
 						isActive ? activeStyle : inactiveStyle
 					}>
 					Settings
-				</NavLink> */}
+				</NavLink>
 			</div>
 		</div>
 	);

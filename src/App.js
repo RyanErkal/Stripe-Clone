@@ -11,6 +11,9 @@ import CustomerDetail from "./pages/CustomerDetail";
 import CustomerPayments from "./pages/CustomerPayments.js";
 import CustomerSubscriptions from "./pages/CustomerSubscriptions";
 import Settings from "./pages/Settings";
+import SettingsAccount from "./pages/SettingsAccount";
+import SettingsNotifications from "./pages/SettingsNotifications";
+import SettingsBilling from "./pages/SettingsBilling";
 import DarkModeProvider from "./components/context/DarkModeProvider";
 
 function App() {
@@ -34,7 +37,17 @@ function App() {
 								element={<CustomerSubscriptions />}
 							/>
 						</Route>
-						<Route path="settings" element={<Settings />} />
+						<Route path="settings" element={<Settings />}>
+							<Route index element={<SettingsAccount />} />
+							<Route
+								path="notifications"
+								element={<SettingsNotifications />}
+							/>
+							<Route
+								path="billing"
+								element={<SettingsBilling />}
+							/>
+						</Route>
 					</Route>
 				</Routes>
 			</DarkModeProvider>
