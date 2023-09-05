@@ -13,6 +13,7 @@ import CustomerSubscriptions from "./pages/CustomerSubscriptions";
 import Settings from "./pages/Settings";
 import SettingsAccount from "./pages/SettingsAccount";
 import SettingsNotifications from "./pages/SettingsNotifications";
+import SettingsPlans from "./pages/SettingsPlans";
 import SettingsBilling from "./pages/SettingsBilling";
 import DarkModeProvider from "./components/context/DarkModeProvider";
 
@@ -43,6 +44,7 @@ function App() {
 								path="notifications"
 								element={<SettingsNotifications />}
 							/>
+							<Route path="plans" element={<SettingsPlans />} />
 							<Route
 								path="billing"
 								element={<SettingsBilling />}

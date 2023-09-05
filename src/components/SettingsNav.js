@@ -31,7 +31,7 @@ export default function SettingsNav() {
 	};
 
 	return (
-		<div class="p-2 flex flex-row lg:flex-col h-min lg:h-full dark:bg-gray-800 dark:text-gray-100 border-r border-gray-400">
+		<div class="pt-2 flex flex-row lg:flex-col h-min lg:h-full dark:bg-gray-800 dark:text-gray-100 border-r border-gray-400">
 			<NavLink
 				to=""
 				style={({ isActive }) =>
@@ -62,6 +62,21 @@ export default function SettingsNav() {
 					<path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
 				</svg>
 				Notifications
+			</NavLink>
+			<NavLink
+				to="plans"
+				style={({ isActive }) =>
+					isActive ? activeStyle : inactiveStyle
+				}>
+				<svg
+					style={{ marginRight: "8px" }}
+					xmlns="http://www.w3.org/2000/svg"
+					height="24"
+					viewBox="0 -960 960 960"
+					width="24">
+					<path d="M320-280q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280Zm0-160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0-160q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm120 320h240v-80H440v80Zm0-160h240v-80H440v80Zm0-160h240v-80H440v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+				</svg>
+				Plans
 			</NavLink>
 			<NavLink
 				to="billing"
