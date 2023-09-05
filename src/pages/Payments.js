@@ -55,22 +55,22 @@ export default function Payments() {
 			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
-					class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 dark:text-green-600 transition-all hover:shadow-xl">
+					class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 text-green-600 transition-all hover:shadow-xl">
 					Succeeded
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", "processing")}
-					class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 dark:text-orange-600 transition-all hover:shadow-xl">
+					class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 text-orange-600 transition-all hover:shadow-xl">
 					Processing
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", "failed")}
-					class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 dark:text-red-600 transition-all hover:shadow-xl">
+					class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 text-red-600 transition-all hover:shadow-xl">
 					Failed
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", null)}
-					class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 dark:text-gray-600 transition-all hover:shadow-xl">
+					class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-xl">
 					Clear
 				</button>
 			</div>
