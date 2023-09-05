@@ -13,11 +13,9 @@ export default function DarkModeProvider({ children }) {
 	}
 
 	return (
-		<div>
-			<DarkMode.Provider value={{ darkMode, toggleDarkMode }}>
-				{children}
-			</DarkMode.Provider>
-		</div>
+		<DarkMode.Provider value={{ darkMode, toggleDarkMode }}>
+			{children}
+		</DarkMode.Provider>
 	);
 }
 

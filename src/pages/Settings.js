@@ -4,13 +4,13 @@ import SettingsNav from "../components/SettingsNav";
 
 export default function Settings() {
 	return (
-		<div class="min-h-max min-w-full bg-gray-100 dark:bg-gray-900">
+		<div class="w-full bg-gray-100 dark:bg-gray-900 overflow-auto">
 			<h1 class="text-3xl font-bold m-4 p-4">Settings</h1>
-			<div class="grid grid-cols-12 gap-4 bg-gray-100 dark:bg-gray-800 h-full m-4 p-4 rounded-2xl shadow-lg">
-				<div class="col-span-2">
+			<div class="grid grid-cols-12 gap-4 bg-gray-100 dark:bg-gray-800 h-full m-4 p-2 lg:p-4 rounded-2xl shadow-lg">
+				<div class="col-span-12 xl:col-span-2">
 					<SettingsNav />
 				</div>
-				<div class="col-span-10">
+				<div class="col-span-12 xl:col-span-10">
 					<Outlet />
 				</div>
 			</div>

@@ -26,8 +26,8 @@ export default function Sidebar() {
 	};
 
 	return (
-		<div class="">
-			<div class="p-2 flex flex-row lg:flex-col h-min lg:h-full dark:bg-gray-800 dark:text-gray-100">
+		<div class="h-full w-screen overflow-auto">
+			<div class="p-2 flex flex-row lg:flex-col h-min w-full dark:bg-gray-800 dark:text-gray-100">
 				<NavLink
 					to="/"
 					style={({ isActive }) =>

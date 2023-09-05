@@ -3,9 +3,11 @@ import React from "react";
 export default function SettingsAccount() {
 	return (
 		<div>
-			<h1 class="text-2xl font-bold m-4 p-4">Account</h1>
+			<h1 class="text-2xl font-bold m-1 mb-4 p-1 lg:m-4 lg:p-4">
+				Account
+			</h1>
 
-			<div class="ml-4 pl-4">
+			<div class="ml-1 pl-1 lg:ml-4 lg:pl-4">
 				<h2 class="text-xl font-bold">Business Profile</h2>
 				<p class="text-sm text-gray-500 dark:text-gray-400">
 					Excepteur sint occaecat cupidatat non proident, sunt in
@@ -13,10 +15,10 @@ export default function SettingsAccount() {
 				</p>
 			</div>
 
-			<div class="m-4 p-4">
+			<div class="m-1 p-1 lg:m-4 lg:p-4">
 				<h2 class="text-xl font-bold">Business Details</h2>
-				<div class="flex w-full">
-					<div class="flex flex-col justify-center items-start mt-4 mr-8 w-1/3">
+				<div class="flex flex-col lg:flex-row w-full">
+					<div class="flex flex-col justify-center items-start mt-4 mr-8 w-full lg:w-1/3">
 						<label for="name" class="text-sm text-gray-400">
 							Business Name
 						</label>
@@ -28,7 +30,7 @@ export default function SettingsAccount() {
 							placeholder="Loral Ltd."
 						/>
 					</div>
-					<div class="flex flex-col justify-center items-start mt-4 mr-8 w-1/3">
+					<div class="flex flex-col justify-center items-start mt-4 mr-8 w-full lg:w-1/3">
 						<label for="name" class="text-sm text-gray-400">
 							Business ID
 						</label>
@@ -40,7 +42,7 @@ export default function SettingsAccount() {
 							placeholder="Kd73hgJ89B"
 						/>
 					</div>
-					<div class="flex flex-col justify-center items-start mt-4 w-1/3">
+					<div class="flex flex-col justify-center items-start mt-4 w-full lg:w-1/3">
 						<label for="name" class="text-sm text-gray-400">
 							Business Location
 						</label>
@@ -55,7 +57,7 @@ export default function SettingsAccount() {
 				</div>
 			</div>
 
-			<div class="m-4 p-4">
+			<div class="m-1 p-1 lg:m-4 lg:p-4">
 				<h2 class="text-xl font-bold">Email</h2>
 				<p class="text-sm text-gray-500 dark:text-gray-400">
 					Excepteur sint occaecat cupidatat non proident, sunt in
@@ -79,7 +81,7 @@ export default function SettingsAccount() {
 				</div>
 			</div>
 
-			<div class="m-4 p-4">
+			<div class="m-1 p-1 lg:m-4 lg:p-4">
 				<h2 class="text-xl font-bold">Password</h2>
 				<p class="text-sm text-gray-500 dark:text-gray-400">
 					Excepteur sint occaecat cupidatat non proident, sunt in
@@ -96,7 +98,7 @@ export default function SettingsAccount() {
 				</div>
 			</div>
 
-			<div class="m-4 p-4">
+			<div class="m-1 p-1 lg:m-4 lg:p-4">
 				<h2 class="text-xl font-bold">Smart Sync for Mac</h2>
 				<p class="text-sm text-gray-500 dark:text-gray-400">
 					Excepteur sint occaecat cupidatat non proident, sunt in

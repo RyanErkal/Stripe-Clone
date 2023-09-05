@@ -3,14 +3,16 @@ import React from "react";
 export default function SettingsNotifications() {
 	return (
 		<div>
-			<h1 class="text-2xl font-bold m-4 p-4">Notifications</h1>
-			<div class="ml-4 pl-4">
+			<h1 class="text-2xl font-bold mb-4 m-1 p-1 lg:m-4 lg:p-4">
+				Notifications
+			</h1>
+			<div class=" ml-1 pl-1 lg:ml-4 lg:pl-4">
 				<h2 class="text-xl font-bold">Payments</h2>
 
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">Successful Payment</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.
@@ -25,7 +27,7 @@ export default function SettingsNotifications() {
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">New Payment</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.
@@ -40,7 +42,7 @@ export default function SettingsNotifications() {
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">Failed Payment</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.
@@ -57,7 +59,7 @@ export default function SettingsNotifications() {
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">New Customer</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.
@@ -73,7 +75,7 @@ export default function SettingsNotifications() {
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">Customer Message</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.
@@ -89,7 +91,7 @@ export default function SettingsNotifications() {
 				<div class="mt-4 pb-4 flex flex-row items-center border-b border-gray-600">
 					<div class="flex flex-col justify-center items-start w-full">
 						<h3 class="text-md font-bold">Customer Invite</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400">
+						<p class="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
 							Excepteur sint occaecat cupidatat non proident, sunt
 							in culpa qui officia deserunt mollit anim id est
 							laborum.

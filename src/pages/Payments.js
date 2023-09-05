@@ -74,7 +74,7 @@ export default function Payments() {
 					Clear
 				</button>
 			</div>
-			<table class="table-auto min-w-max lg:w-full m-6">
+			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6 overflow-auto">
 				<thead>
 					<tr class="text-left">
 						<th>

@@ -3,8 +3,10 @@ import React from "react";
 export default function SettingsBilling() {
 	return (
 		<div>
-			<h1 class="text-2xl font-bold m-4 p-4">Billing & Invoices</h1>
-			<div class="ml-4 pl-4">
+			<h1 class="text-2xl font-bold m-1 mb-2 p-1 lg:m-4 lg:p-4">
+				Billing & Invoices
+			</h1>
+			<div class="m-1 p-1 lg:ml-4 lg:pl-4">
 				<h2 class="text-xl font-bold">Billing Information</h2>
 				<h3 class="mt-4 text-md font-bold">Payment Method</h3>
 				<p class="text-sm text-gray-500 dark:text-gray-400">

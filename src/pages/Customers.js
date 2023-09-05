@@ -31,7 +31,7 @@ export default function Customers() {
 	return (
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
-			<table class="table-auto min-w-max lg:w-full m-6">
+			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6">
 				<thead>
 					<tr class="text-left">
 						<th>

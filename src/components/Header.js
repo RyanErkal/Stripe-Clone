@@ -9,24 +9,26 @@ export default function Header() {
 	console.log(showNotifications);
 
 	return (
-		<div>
+		<div class="w-full bg-red-300 overflow-auto">
 			{showNotifications && (
 				<Notifications
 					toggle={() => setShowNotifications(!showNotifications)}
 				/>
 			)}
-			<div class="bg-purple-600 min-w-max">
+			<div class="bg-purple-600 w-full">
 				<div class="flex justify-between items-center px-4 py-2">
 					<div class="flex items-center">
-						<h1 class="text-white text-2xl font-bold">Stripe</h1>
-						<div class="ml-4">
+						<h1 class="text-white text-xl lg:text-2xl font-bold">
+							Stripe
+						</h1>
+						<div class="ml-2 xl:ml-4">
 							<button class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400">
 								New
 							</button>
 						</div>
 					</div>
 					<div class="flex items-center">
-						<div class="mr-4 flex align-center">
+						<div class="mr-2 xl:mr-4 flex align-center">
 							<label class="relative inline-flex items-center cursor-pointer">
 								<input
 									type="checkbox"
@@ -39,7 +41,7 @@ export default function Header() {
 								<div class="w-11 h-6 focus:outline-none focus:ring-4 focus:ring-purple-800 rounded-full bg-gray-700 peer-checked:after:translate-x-full checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-purple-400"></div>
 							</label>
 						</div>
-						<div class="mr-4">
+						<div class="mr-2 xl:mr-4">
 							<button
 								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
 								onClick={() =>
