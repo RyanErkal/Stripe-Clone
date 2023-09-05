@@ -28,7 +28,7 @@ export default function SettingsPlans() {
 			<div class="ml-4 pl-4">
 				<h3 class="mt-8 text-md font-bold">Available Plans</h3>
 				<div class="flex flex-row items-center justify-around">
-					<div class="flex flex-col items-center bg-blue-100 dark:bg-gray-700 p-4 mt-12 mr-8 rounded-lg w-1/3 shadow-lg">
+					<div class="flex flex-col items-center bg-blue-100 dark:bg-gray-700 p-4 mt-12 rounded-lg w-1/3 shadow-lg">
 						<div class="relative -top-10 text-2xl max-w-min px-6 py-4 font-bold text-blue-100 bg-blue-400 rounded-full">
 							Basic
 						</div>
@@ -67,7 +67,7 @@ export default function SettingsPlans() {
 						</p>
 					</div>
 
-					<div class="flex flex-col items-center bg-orange-100 dark:bg-gray-700 p-4 mt-12 mr-8 rounded-lg w-1/3 shadow-lg">
+					<div class="flex flex-col items-center bg-orange-100 dark:bg-gray-700 p-4 mt-12 mx-12 rounded-lg w-1/3 shadow-lg">
 						<div class="relative -top-10 text-2xl max-w-min px-6 py-4 font-bold text-orange-100 bg-orange-400 rounded-full">
 							Advanced
 						</div>
