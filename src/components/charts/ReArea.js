@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	AreaChart,
-	Area,
-	Tooltip,
-	ResponsiveContainer,
-	XAxis,
-	YAxis
-} from "recharts";
+import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
 	{

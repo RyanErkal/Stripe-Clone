@@ -101,7 +101,7 @@ export default function SettingsNotifications() {
 					<input
 						type="button"
 						value="Disable"
-						class="dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 dark:border-gray-600 dark:hover:border-gray-400 text-red-600 dark:text-gray-100 font-bold py-2 px-4 rounded-lg mr-4 transition-all"
+						class="dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 dark:border-gray-600 dark:hover:border-gray-400 text-red-600 font-bold py-2 px-4 rounded-lg mr-4 transition-all"
 					/>
 				</div>
 
