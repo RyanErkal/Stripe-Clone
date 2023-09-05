@@ -5,7 +5,7 @@ export default function CustomerDetail() {
 	const customer = useLocation().state;
 
 	return (
-		<div class="m-4 p-4 bg-gray-100 rounded-2xl shadow-xl">
+		<div class="m-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl">
 			<h3 class="mt-4 text-xl font-bold">
 				Plan: {customer.subscription.plan}{" "}
 				<span

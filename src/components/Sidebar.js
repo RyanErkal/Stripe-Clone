@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { DarkMode } from "./context/DarkModeProvider";
+import { useContext } from "react";
 
 export default function Sidebar() {
+	const { darkMode } = useContext(DarkMode);
+
 	const activeStyle = {
 		color: "#a78bfa",
 		borderLeft: "4px solid #a78bfa",
@@ -13,7 +17,7 @@ export default function Sidebar() {
 	};
 
 	const inactiveStyle = {
-		color: "#111827",
+		color: darkMode ? "#f3f4f6" : "#111827",
 		margin: "2px",
 		padding: "4px 4px 4px 16px",
 		fontWeight: "bold",
@@ -23,7 +27,7 @@ export default function Sidebar() {
 
 	return (
 		<div class="">
-			<div class="p-2 flex flex-row lg:flex-col h-min lg:h-full">
+			<div class="p-2 flex flex-row lg:flex-col h-min lg:h-full dark:bg-gray-900 dark:text-gray-100">
 				<NavLink
 					to="/"
 					style={({ isActive }) =>

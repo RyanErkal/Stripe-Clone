@@ -9,10 +9,10 @@ import "../App.css";
 
 export default function Home() {
 	return (
-		<div class="min-h-max min-w-full bg-gray-100">
+		<div class="min-h-max min-w-full bg-gray-100 dark:bg-gray-900">
 			<h1 class="text-3xl font-bold p-4">Dashboard</h1>
 			{/* Teirs Sales */}
-			<div class="grid grid-cols-12 gap-4 m-4 bg-gray-100">
+			<div class="grid grid-cols-12 gap-4 m-4 bg-gray-100 dark:bg-gray-900">
 				<div class="col-span-12 xl:col-span-4 h-64">
 					<Section
 						title="Basic"
@@ -132,16 +132,22 @@ export default function Home() {
 				</div>
 				<div class="col-span-12 xl:col-span-4 h-96">
 					<Section title="Balances" textposition="start">
-						<div class="flex flex-col h-full justify-start items-start">
+						<div class="flex flex-col h-full justify-start items-start py-4">
 							<h3 class="text-l font-bold">GBP Balance</h3>
-							<p>£69,420</p>
+							<p>£34,230</p>
 							<p class="text-sm text-gray-500">
 								Last updated 2 minutes ago
 							</p>
 							<br />
-							<h3 class="text-l font-bold">Payouts</h3>
-							<p>£1234</p>
+							<h3 class="text-l font-bold">Expected Payouts</h3>
+							<p>£4,435</p>
 							<p class="text-sm text-gray-500">
+								Last updated 2 minutes ago
+							</p>
+							<br />
+							<h3 class="text-l font-bold">In Transit</h3>
+							<p>£6,323</p>
+							<p class="text-sm text-gray-500 dark:text-gray-400">
 								Last updated 2 minutes ago
 							</p>
 						</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import {
 	useParams,
 	Link,
@@ -6,9 +7,11 @@ import {
 	Outlet,
 	useLocation
 } from "react-router-dom";
+import { DarkMode } from "../components/context/DarkModeProvider";
 
 export default function Customer() {
 	const customer = useLocation().state;
+	const { darkMode } = useContext(DarkMode);
 
 	const activeStyle = {
 		color: "#a78bfa",
@@ -21,7 +24,7 @@ export default function Customer() {
 	};
 
 	const inactiveStyle = {
-		color: "#111827",
+		color: darkMode ? "#f3f4f6" : "#111827",
 		margin: "4px",
 		padding: "4px",
 		fontWeight: "bold",
@@ -36,7 +39,7 @@ export default function Customer() {
 			<div class="m-4">
 				<Link
 					to="/customers"
-					class="bg-purple-200 px-4 p-2 m-2 border border-purple-300 rounded-full hover:bg-purple-300 transition-all">
+					class="bg-purple-200 font-bold px-4 p-2 m-2 border border-purple-300 rounded-full hover:bg-purple-300 dark:text-purple-600 transition-all">
 					Back to Customers
 				</Link>
 			</div>

@@ -55,22 +55,22 @@ export default function Payments() {
 			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
-					class="bg-green-200 px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 transition-all hover:shadow-xl">
+					class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 dark:text-green-600 transition-all hover:shadow-xl">
 					Succeeded
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", "processing")}
-					class="bg-orange-200 px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 transition-all hover:shadow-xl">
+					class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 dark:text-orange-600 transition-all hover:shadow-xl">
 					Processing
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", "failed")}
-					class="bg-red-200 px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 transition-all hover:shadow-xl">
+					class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 dark:text-red-600 transition-all hover:shadow-xl">
 					Failed
 				</button>
 				<button
 					onClick={() => handleFilterChange("status", null)}
-					class="bg-gray-200 px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 transition-all hover:shadow-xl">
+					class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 dark:text-gray-600 transition-all hover:shadow-xl">
 					Clear
 				</button>
 			</div>
@@ -94,7 +94,7 @@ export default function Payments() {
 			</table>
 			<div class="flex justify-between items-center my-4 mx-8">
 				<div class="basis-1/2 justify-start">
-					<span class="text-sm text-gray-700 dark:text-gray-400">
+					<span class="text-sm text-gray-600 dark:text-gray-400">
 						Showing <span class="font-semibold">1</span> to{" "}
 						<span class="font-semibold">10</span> of{" "}
 						<span class="font-semibold">100</span> results
@@ -102,7 +102,7 @@ export default function Payments() {
 				</div>
 
 				<div class="flex justify-end basis-1/2 mt-2 xs:mt-0">
-					<button class="flex items-center justify-center p-2 mx-2 text-sm font-medium bg-gray-600 text-gray-100 hover:text-purple-300 rounded-lg">
+					<button class="flex items-center justify-center p-2 mx-2 text-sm font-medium bg-gray-600 text-gray-100 hover:text-purple-200 rounded-lg">
 						<svg
 							class="w-3.5 h-3.5 mr-2"
 							aria-hidden="true"

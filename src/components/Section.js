@@ -11,7 +11,7 @@ export default function Section({
 }) {
 	return (
 		<div
-			class={`flex flex-col justify-center items-${textposition} h-full m-4 p-4 rounded-2xl shadow-lg`}>
+			class={`flex flex-col justify-center items-${textposition} h-full m-4 p-4 rounded-2xl shadow-lg dark:bg-gray-800`}>
 			<h3 class="text-xl font-bold">{title}</h3>
 			<p class="text-sm font-bold text-gray-500">{subheader}</p>
 			<p

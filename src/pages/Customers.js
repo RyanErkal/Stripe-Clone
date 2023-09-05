@@ -5,9 +5,12 @@ import CustomerData from "../data/CustomerData.json";
 export default function Customers() {
 	const customerList = CustomerData.map((customer) => (
 		<tr
-			class="text-left hover:text-purple-800 hover:font-bold"
+			class="text-left hover:text-purple-600 transition-all"
 			key={customer.name}>
-			<td class="p-4 hover:font-bold">
+			<th>
+				<input type="checkbox" />
+			</th>
+			<td class="p-4">
 				<Link to={`/customers/${customer.name}`} state={customer}>
 					{customer.name}
 				</Link>
@@ -28,9 +31,12 @@ export default function Customers() {
 	return (
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
-			<table class="table-fixed w-full m-6">
+			<table class="table-auto min-w-max lg:w-full m-6">
 				<thead>
 					<tr class="text-left">
+						<th>
+							<input type="checkbox" />
+						</th>
 						<th class="pl-4">NAME</th>
 						<th>EMAIL</th>
 						<th>PAYMENTS</th>
@@ -41,7 +47,7 @@ export default function Customers() {
 			</table>
 			<div class="flex justify-between items-center my-4 mx-8">
 				<div class="basis-1/2 justify-start">
-					<span class="text-sm text-gray-700 dark:text-gray-400">
+					<span class="text-sm text-gray-600 dark:text-gray-400">
 						Showing <span class="font-semibold">1</span> to{" "}
 						<span class="font-semibold">5</span> of{" "}
 						<span class="font-semibold">100</span> results

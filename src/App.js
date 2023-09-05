@@ -11,27 +11,33 @@ import CustomerDetail from "./pages/CustomerDetail";
 import CustomerPayments from "./pages/CustomerPayments.js";
 import CustomerSubscriptions from "./pages/CustomerSubscriptions";
 import Settings from "./pages/Settings";
+import DarkModeProvider from "./components/context/DarkModeProvider";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route element={<Layout />}>
-					<Route index element={<Home />} />
-					<Route path="payments" element={<Payments />} />
-					<Route path="balances" element={<Balances />} />
-					<Route path="customers" element={<Customers />} />
-					<Route path="customers/:name" element={<Customer />}>
-						<Route index element={<CustomerDetail />} />
-						<Route path="payments" element={<CustomerPayments />} />
-						<Route
-							path="subscriptions"
-							element={<CustomerSubscriptions />}
-						/>
+			<DarkModeProvider>
+				<Routes>
+					<Route element={<Layout />}>
+						<Route index element={<Home />} />
+						<Route path="payments" element={<Payments />} />
+						<Route path="balances" element={<Balances />} />
+						<Route path="customers" element={<Customers />} />
+						<Route path="customers/:name" element={<Customer />}>
+							<Route index element={<CustomerDetail />} />
+							<Route
+								path="payments"
+								element={<CustomerPayments />}
+							/>
+							<Route
+								path="subscriptions"
+								element={<CustomerSubscriptions />}
+							/>
+						</Route>
+						<Route path="settings" element={<Settings />} />
 					</Route>
-					<Route path="settings" element={<Settings />} />
-				</Route>
-			</Routes>
+				</Routes>
+			</DarkModeProvider>
 		</BrowserRouter>
 	);
 }
