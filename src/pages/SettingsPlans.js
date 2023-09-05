@@ -3,18 +3,18 @@ import React from "react";
 export default function SettingsPlans() {
 	return (
 		<div>
-			<h1 class="text-2xl font-bold m-4 p-4">Plans</h1>
-			<div class="ml-4 pl-4">
+			<h1 class="text-2xl font-bold m-1 p-1 mb-2 lg:m-4 lg:p-4">Plans</h1>
+			<div class="ml-1 pl-1 lg:ml-4 lg:pl-4">
 				<h3 class="mt-4 text-md font-bold">Current Plan</h3>
 				<div class="mt-4 text-2xl max-w-min px-4 py-2 font-bold text-orange-100 bg-orange-400 rounded-full">
 					Advanced
 				</div>
-				<p class="ml-2 mt-4 text-sm text-gray-500 dark:text-gray-400">
+				<p class="ml-1 lg:ml-2 mt-4 text-sm text-gray-500 dark:text-gray-400">
 					This workspace's Advanced plan is set to{" "}
 					<span class="font-bold">£349</span> per month renews on 1st
 					april 2023
 				</p>
-				<div class="ml-2 flex flex-row items-center justify-start">
+				<div class="ml-1 lg:ml-2 mt-2 flex flex-row items-center justify-start">
 					<input
 						type="checkbox"
 						class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
@@ -26,7 +26,7 @@ export default function SettingsPlans() {
 			</div>
 
 			<div class="lg:ml-4 lg:pl-4">
-				<h3 class="mt-8 text-md font-bold">Available Plans</h3>
+				<h3 class="ml-1 mt-8 text-md font-bold">Available Plans</h3>
 				<div class="flex flex-col lg:flex-row items-center justify-around">
 					<div class="flex flex-col items-center bg-blue-100 dark:bg-gray-700 p-4 mt-12 rounded-lg w-full lg:w-1/3 shadow-lg">
 						<div class="relative -top-10 text-2xl max-w-min px-6 py-4 font-bold text-blue-100 bg-blue-400 rounded-full">
