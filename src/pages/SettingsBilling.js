@@ -59,6 +59,18 @@ export default function SettingsBilling() {
 					See More
 				</span>
 			</div>
+			<div class="mt-8 flex justify-end items-center">
+				<input
+					type="button"
+					value="Cancel"
+					class="bg-gray-800 border border-gray-600 hover:border-gray-400 text-gray-100 font-bold py-2 px-4 rounded-lg mr-4 transition-all"
+				/>
+				<input
+					type="button"
+					value="Save Changes"
+					class="bg-purple-500 hover:bg-purple-600 text-gray-100 font-bold py-2 px-4 rounded-lg transition-all"
+				/>
+			</div>
 		</div>
 	);
 }
