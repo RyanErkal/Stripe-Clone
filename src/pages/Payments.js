@@ -4,11 +4,17 @@ import PaymentData from "../data/PaymentData.json";
 
 export default function Payments() {
 	const [searchParams, setSearchParams] = useSearchParams();
+	const [sort, setSort] = React.useState(null);
+	const [sortDir, setSortDir] = React.useState("ascending");
 
 	const filter = searchParams.get("status");
 
+	const sortedPayments = sort
+		? sortArrayOfObjects(PaymentData, sort, sortDir)
+		: PaymentData;
+
 	const filteredPayments = filter
-		? PaymentData.filter((payment) => payment.status === filter)
+		? sortedPayments.filter((payment) => payment.status === filter)
 		: PaymentData;
 
 	const paymentList = filteredPayments.map((payment) => (
@@ -49,9 +55,41 @@ export default function Payments() {
 		});
 	}
 
+	function changeSort(e) {
+		setSort(e.target.value);
+	}
+
+	function changeSortDir(e) {
+		setSortDir(e.target.value);
+	}
+
+	React.useEffect(() => {
+		sortArrayOfObjects(PaymentData, sort, sortDir);
+	}, [sort, sortDir]);
+
+	function sortArrayOfObjects(arr, propertyName, order) {
+		const sortedArr = arr.sort((a, b) => {
+			if (a[propertyName] < b[propertyName]) {
+				return -1;
+			}
+			if (a[propertyName] > b[propertyName]) {
+				return 1;
+			}
+			return 0;
+		});
+
+		if (order === "descending") {
+			return sortedArr.reverse();
+		}
+
+		return sortedArr;
+	}
+
 	return (
 		<>
-			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
+			<h1 class="text-3xl font-bold m-4 p-4">
+				Payments {sort} {sortDir}
+			</h1>
 			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
@@ -73,6 +111,20 @@ export default function Payments() {
 					class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-xl">
 					Clear
 				</button>
+				<select
+					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+					onChange={changeSort}>
+					<option value="sortby">Sort by</option>
+					<option value="name">Name</option>
+					<option value="amount">Amount</option>
+					<option value="items">Items</option>
+				</select>
+				<select
+					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+					onChange={changeSortDir}>
+					<option value="ascending">Ascending</option>
+					<option value="descending">Descending</option>
+				</select>
 			</div>
 			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6 overflow-auto">
 				<thead>
