@@ -2,9 +2,9 @@ import React from "react";
 
 export default function NewModalContent({ closeModal }) {
 	return (
-		<div class="w-full h-full p-8 flex flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
+		<div class="w-full h-full py-4 px-8 lg:py-16 lg:px-32 flex flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
 			<h1 class="text-2xl font-bold">New</h1>
-			<select class="mt-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
+			<select class="m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
 				<option value="payment">Payment</option>
 				<option value="subscription">Subscription</option>
 				<option value="invoice">Invoice</option>
@@ -12,12 +12,12 @@ export default function NewModalContent({ closeModal }) {
 			<input
 				type="text"
 				placeholder="Product"
-				class="p-2 m-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+				class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 			/>
 			<input
 				type="text"
 				placeholder="Amount"
-				class="p-2 m-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+				class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 			/>
 			<h3 class="text-xl font-bold mt-2">Options</h3>
 			<div class="flex mt-2">
