@@ -1,12 +1,29 @@
 import React from "react";
 import { DarkMode } from "./context/DarkModeProvider";
 import Notifications from "./Notifications";
+import Modal from "react-modal";
+import ModalContent from "./ModalContent";
+import scrollLock from "scroll-lock";
+import "../App.css";
+
+Modal.setAppElement(document.getElementById("root"));
 
 export default function Header() {
 	const { toggleDarkMode } = React.useContext(DarkMode);
 	const [showNotifications, setShowNotifications] = React.useState(false);
+	const [modalIsOpen, setIsOpen] = React.useState(false);
 
-	console.log(showNotifications);
+	function openModal() {
+		setIsOpen(true);
+		scrollLock.disablePageScroll();
+		console.log("open");
+	}
+
+	function closeModal() {
+		setIsOpen(false);
+		scrollLock.enablePageScroll();
+		console.log("close");
+	}
 
 	return (
 		<div class="w-full bg-red-300 overflow-auto">
@@ -16,13 +33,24 @@ export default function Header() {
 				/>
 			)}
 			<div class="bg-purple-600 w-full">
+				<Modal
+					isOpen={modalIsOpen}
+					onRequestClose={closeModal}
+					className="Modal"
+					overlayClassName="Overlay"
+					contentLabel="New Modal">
+					<ModalContent closeModal={closeModal} />
+				</Modal>
+
 				<div class="flex justify-between items-center px-4 py-2">
 					<div class="flex items-center">
 						<h1 class="text-white text-xl lg:text-2xl font-bold">
 							Stripe
 						</h1>
 						<div class="ml-2 xl:ml-4">
-							<button class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400">
+							<button
+								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
+								onClick={openModal}>
 								New
 							</button>
 						</div>
