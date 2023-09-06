@@ -87,9 +87,7 @@ export default function Payments() {
 
 	return (
 		<>
-			<h1 class="text-3xl font-bold m-4 p-4">
-				Payments {sort} {sortDir}
-			</h1>
+			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
 			<div class="m-4">
 				<button
 					onClick={() => handleFilterChange("status", "succeeded")}
