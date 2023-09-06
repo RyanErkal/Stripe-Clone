@@ -77,11 +77,9 @@ export default function Payments() {
 			}
 			return 0;
 		});
-
 		if (order === "descending") {
 			return sortedArr.reverse();
 		}
-
 		return sortedArr;
 	}
 

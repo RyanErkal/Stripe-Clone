@@ -3,7 +3,58 @@ import { Link } from "react-router-dom";
 import CustomerData from "../data/CustomerData.json";
 
 export default function Customers() {
-	const customerList = CustomerData.map((customer) => (
+	const [sort, setSort] = React.useState(null);
+	const [sortDir, setSortDir] = React.useState("ascending");
+
+	const sortedCustomers = sort
+		? sortArrayOfObjects(CustomerData, sort, sortDir)
+		: CustomerData;
+
+	function sortArrayOfObjects(arr, propertyName, order) {
+		const sortedArr = arr.sort((a, b) => {
+			if (propertyName === "total") {
+				if (getTotalSpend(a) < getTotalSpend(b)) {
+					return -1;
+				}
+				if (getTotalSpend(a) > getTotalSpend(b)) {
+					return 1;
+				}
+				return 0;
+			}
+			if (a[propertyName] < b[propertyName]) {
+				return -1;
+			}
+			if (a[propertyName] > b[propertyName]) {
+				return 1;
+			}
+			return 0;
+		});
+		if (order === "descending") {
+			return sortedArr.reverse();
+		}
+		return sortedArr;
+	}
+
+	function getTotalSpend(customer) {
+		return customer.orders.reduce(
+			(accumulator, currentValue) => accumulator + currentValue.amount,
+			0
+		);
+	}
+
+	function changeSort(e) {
+		setSort(e.target.value);
+	}
+
+	function changeSortDir(e) {
+		setSortDir(e.target.value);
+	}
+
+	React.useEffect(() => {
+		sortArrayOfObjects(CustomerData, sort, sortDir);
+	}, [sort, sortDir]);
+
+	const customerList = sortedCustomers.map((customer) => (
 		<tr
 			class="text-left hover:text-purple-600 transition-all"
 			key={customer.name}>
@@ -31,6 +82,23 @@ export default function Customers() {
 	return (
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
+			<div class="m-4">
+				<select
+					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+					onChange={changeSort}>
+					<option value="sortby">Sort by</option>
+					<option value="name">Name</option>
+					<option value="orders">Payments</option>
+					<option value="total">Total Spend</option>
+				</select>
+				<select
+					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+					onChange={changeSortDir}>
+					<option value="ascending">Ascending</option>
+					<option value="descending">Descending</option>
+				</select>
+			</div>
+
 			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6">
 				<thead>
 					<tr class="text-left">
