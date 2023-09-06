@@ -13,7 +13,7 @@ export default function Layout() {
 				<div class="col-span-12 lg:col-span-1 bg-gray-200 dark:bg-gray-800 dark:text-gray-100">
 					<Sidebar />
 				</div>
-				<div class="col-span-12 lg:col-span-11 min-h-screen overflow-auto bg-gray-100 dark:bg-gray-900 dark:text-gray-100">
+				<div class="col-span-12 lg:col-span-11 min-h-screen overflow-auto bg-gray-100 dark:bg-gray-900 dark:text-gray-100 pb-8">
 					<Outlet />
 				</div>
 			</div>
