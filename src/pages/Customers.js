@@ -10,6 +10,10 @@ export default function Customers() {
 		? sortArrayOfObjects(CustomerData, sort, sortDir)
 		: CustomerData;
 
+	/* React.useEffect(() => {
+		sortArrayOfObjects(CustomerData, sort, sortDir);
+	}, [sort, sortDir]); */
+
 	function sortArrayOfObjects(arr, propertyName, order) {
 		const sortedArr = arr.sort((a, b) => {
 			if (propertyName === "total") {
@@ -49,10 +53,6 @@ export default function Customers() {
 	function changeSortDir(e) {
 		setSortDir(e.target.value);
 	}
-
-	React.useEffect(() => {
-		sortArrayOfObjects(CustomerData, sort, sortDir);
-	}, [sort, sortDir]);
 
 	const customerList = sortedCustomers.map((customer) => (
 		<tr
