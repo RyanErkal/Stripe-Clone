@@ -1,11 +1,11 @@
 import React from "react";
+import "../App.css";
 import ReBar from "../components/charts/ReBar";
 import ReArea from "../components/charts/ReArea";
 import Section from "../components/Section";
 import ReSimpleArea from "../components/charts/ReSimpleArea";
 import RePie from "../components/charts/RePie";
 import ReNegBar from "../components/charts/ReNegBar";
-import "../App.css";
 
 export default function Home() {
 	return (

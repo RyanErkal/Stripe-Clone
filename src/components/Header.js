@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { DarkMode } from "./context/DarkModeProvider";
 import Notifications from "./Notifications";
 import Modal from "react-modal";
@@ -7,6 +8,9 @@ import SupportModalContent from "./SupportModalContent";
 import LoginModalContent from "./LoginModalContent";
 import scrollLock from "scroll-lock";
 import "../App.css";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import { signOut } from "firebase/auth";
 
 Modal.setAppElement(document.getElementById("root"));
 
@@ -16,6 +20,32 @@ export default function Header() {
 	const [newModal, setNewModal] = React.useState(false);
 	const [supportModal, setSupportModal] = React.useState(false);
 	const [loginModal, setLoginModal] = React.useState(false);
+	const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				const uid = user.uid;
+				setUser(uid);
+				console.log("uid", uid);
+			} else {
+				console.log("user is logged out");
+			}
+		});
+	}, []);
+
+	const handleLogout = () => {
+		signOut(auth)
+			.then(() => {
+				// Sign-out successful.
+				console.log("Signed out successfully");
+				setUser(null);
+			})
+			.catch((error) => {
+				// An error happened.
+				console.log(error);
+			});
+	};
 
 	function openNewModal() {
 		setNewModal(true);
@@ -88,6 +118,9 @@ export default function Header() {
 								New
 							</button>
 						</div>
+						<h1 class="text-white text-md lg:text-md font-bold">
+							{user && "you are logged in"}
+						</h1>
 					</div>
 					<div class="flex items-center">
 						<div class="mr-2 xl:mr-4 flex align-center">
@@ -113,8 +146,8 @@ export default function Header() {
 						<div>
 							<button
 								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
-								onClick={openLoginModal}>
-								Login
+								onClick={user ? handleLogout : openLoginModal}>
+								{user ? "Logout" : "Login"}
 							</button>
 						</div>
 					</div>
