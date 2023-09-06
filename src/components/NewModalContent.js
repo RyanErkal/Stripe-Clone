@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ModalContent({ closeModal }) {
+export default function NewModalContent({ closeModal }) {
 	return (
 		<div class="w-full h-full p-8 flex flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
 			<h1 class="text-2xl font-bold">New</h1>

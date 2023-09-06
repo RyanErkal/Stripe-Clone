@@ -2,7 +2,9 @@ import React from "react";
 import { DarkMode } from "./context/DarkModeProvider";
 import Notifications from "./Notifications";
 import Modal from "react-modal";
-import ModalContent from "./ModalContent";
+import NewModalContent from "./NewModalContent";
+import SupportModalContent from "./SupportModalContent";
+import LoginModalContent from "./LoginModalContent";
 import scrollLock from "scroll-lock";
 import "../App.css";
 
@@ -11,16 +13,32 @@ Modal.setAppElement(document.getElementById("root"));
 export default function Header() {
 	const { toggleDarkMode } = React.useContext(DarkMode);
 	const [showNotifications, setShowNotifications] = React.useState(false);
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [newModal, setNewModal] = React.useState(false);
+	const [supportModal, setSupportModal] = React.useState(false);
+	const [loginModal, setLoginModal] = React.useState(false);
 
-	function openModal() {
-		setIsOpen(true);
+	function openNewModal() {
+		setNewModal(true);
+		scrollLock.disablePageScroll();
+		console.log("open");
+	}
+
+	function openSupportModal() {
+		setSupportModal(true);
+		scrollLock.disablePageScroll();
+		console.log("open");
+	}
+
+	function openLoginModal() {
+		setLoginModal(true);
 		scrollLock.disablePageScroll();
 		console.log("open");
 	}
 
 	function closeModal() {
-		setIsOpen(false);
+		setNewModal(false);
+		setSupportModal(false);
+		setLoginModal(false);
 		scrollLock.enablePageScroll();
 		console.log("close");
 	}
@@ -34,12 +52,28 @@ export default function Header() {
 			)}
 			<div class="bg-purple-600 w-full">
 				<Modal
-					isOpen={modalIsOpen}
+					isOpen={newModal}
 					onRequestClose={closeModal}
 					className="Modal"
 					overlayClassName="Overlay"
 					contentLabel="New Modal">
-					<ModalContent closeModal={closeModal} />
+					<NewModalContent closeModal={closeModal} />
+				</Modal>
+				<Modal
+					isOpen={supportModal}
+					onRequestClose={closeModal}
+					className="Modal"
+					overlayClassName="Overlay"
+					contentLabel="Support Modal">
+					<SupportModalContent closeModal={closeModal} />
+				</Modal>
+				<Modal
+					isOpen={loginModal}
+					onRequestClose={closeModal}
+					className="Modal"
+					overlayClassName="Overlay"
+					contentLabel="Login Modal">
+					<LoginModalContent closeModal={closeModal} />
 				</Modal>
 
 				<div class="flex justify-between items-center px-4 py-2">
@@ -50,7 +84,7 @@ export default function Header() {
 						<div class="ml-2 xl:ml-4">
 							<button
 								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
-								onClick={openModal}>
+								onClick={openNewModal}>
 								New
 							</button>
 						</div>
@@ -72,14 +106,14 @@ export default function Header() {
 						<div class="mr-2 xl:mr-4">
 							<button
 								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
-								onClick={() =>
-									setShowNotifications(!showNotifications)
-								}>
+								onClick={openSupportModal}>
 								Support
 							</button>
 						</div>
 						<div>
-							<button class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400">
+							<button
+								class="text-white text-sm font-semibold bg-purple-500 px-4 py-2 rounded hover:bg-purple-400"
+								onClick={openLoginModal}>
 								Login
 							</button>
 						</div>
