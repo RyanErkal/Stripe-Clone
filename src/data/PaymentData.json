@@ -26,7 +26,7 @@
         "amount": 3250,
         "status": "succeeded",
         "location": "Tokyo",
-        "items": 1,
+        "items": 5,
         "type": "one time"
     },
     {
@@ -36,7 +36,7 @@
         "amount": 6700,
         "status": "processing",
         "location": "Milan",
-        "items": 2,
+        "items": 22,
         "type": "one time"
     },
     {
@@ -46,7 +46,7 @@
         "amount": 9000,
         "status": "succeeded",
         "location": "California",
-        "items": 1,
+        "items": 12,
         "type": "subscription"
     },
     {
@@ -56,7 +56,7 @@
         "amount": 9875,
         "status": "succeeded",
         "location": "Texas",
-        "items": 2,
+        "items": 28,
         "type": "one time"
     },
     {
@@ -66,7 +66,7 @@
         "amount": 6650,
         "status": "processing",
         "location": "Moscow",
-        "items": 1,
+        "items": 31,
         "type": "one time"
     },
     {
@@ -76,7 +76,7 @@
         "amount": 1050,
         "status": "failed",
         "location": "Madrid",
-        "items": 1,
+        "items": 11,
         "type": "subscription"
     },
     {
@@ -86,7 +86,17 @@
         "amount": 2650,
         "status": "succeeded",
         "location": "Barcelona",
-        "items": 3,
+        "items": 8,
+        "type": "one time"
+    },
+    {
+        "order": "#1243",
+        "date": "29-08-2023",
+        "name": "Kylo Ren",
+        "amount": 3420,
+        "status": "succeeded",
+        "location": "Manchester",
+        "items": 18,
         "type": "one time"
     }
 ]
