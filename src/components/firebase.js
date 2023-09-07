@@ -1,11 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {
-	getFirestore,
-	collection,
-	doc,
-	getDoc,
-	setDoc
-} from "firebase/firestore/lite";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
