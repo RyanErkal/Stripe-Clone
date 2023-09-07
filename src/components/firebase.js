@@ -1,8 +1,13 @@
 import { initializeApp } from "firebase/app";
-/* import {
+import {
 	getFirestore,
-	collection
-} from "firebase/firestore/lite"; */
+	collection,
+	doc,
+	getDoc,
+	setDoc,
+	query,
+	where
+} from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
@@ -17,28 +22,44 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-/* const db = getFirestore(app); */
+const db = getFirestore(app);
 
 export const auth = getAuth(app);
 export default app;
 
-/* const usersCollectionRef = collection(db, "users"); */
+const usersCollectionRef = collection(db, "users");
 
-/* export async function getUsers() {
-	const snapshot = await getDocs(usersCollectionRef);
-	const users = snapshot.docs.map((doc) => ({
-		...doc.data(),
-		id: doc.id
-	}));
-	return users;
+export async function createUser(
+	uid,
+	firstName,
+	lastName,
+	email,
+	phoneNumber,
+	bussinessName,
+	bussinessID,
+	vatNumber
+) {
+	await setDoc(doc(db, "users", uid), {
+		firstName,
+		lastName,
+		email,
+		phoneNumber,
+		bussinessName,
+		bussinessID,
+		vatNumber
+	});
 }
 
-export async function getUser() {
-	const q = query(usersCollectionRef, where("username", "==", "tester"));
-	const snapshot = await getDocs(q);
-	const user = snapshot.docs.map((doc) => ({
-		...doc.data(),
-		id: doc.id
-	}));
-	return user;
-} */
+export async function getUser(uid) {
+	const docRef = doc(db, "users", uid);
+	const docSnap = await getDoc(docRef);
+	if (docSnap.exists()) {
+		console.log("Document data:");
+		console.log(docSnap.data());
+		const userData = { ...docSnap.data(), uid: docSnap.uid };
+		return userData;
+	} else {
+		// docSnap.data() will be undefined in this case
+		console.log("No such document!");
+	}
+}

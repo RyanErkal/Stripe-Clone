@@ -11,6 +11,7 @@ import "../App.css";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import { signOut } from "firebase/auth";
+import { getUser } from "./firebase";
 
 Modal.setAppElement(document.getElementById("root"));
 
@@ -21,28 +22,38 @@ export default function Header() {
 	const [supportModal, setSupportModal] = React.useState(false);
 	const [loginModal, setLoginModal] = React.useState(false);
 	const [user, setUser] = useState(null);
+	const [userData, setUserData] = useState(null);
 
 	useEffect(() => {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
 				const uid = user.uid;
 				setUser(uid);
-				console.log("uid", uid);
+				console.log("Header uid:", uid);
 			} else {
-				console.log("user is logged out");
+				console.log("Header: user is logged out");
 			}
 		});
 	}, []);
+
+	useEffect(() => {
+		if (user) {
+			getUser(user).then((data) => {
+				setUserData(data);
+			});
+		}
+	}, [user]);
 
 	const handleLogout = () => {
 		signOut(auth)
 			.then(() => {
 				// Sign-out successful.
-				console.log("Signed out successfully");
+				console.log("Header: Signed out successfully");
 				setUser(null);
 			})
 			.catch((error) => {
 				// An error happened.
+				console.log("Header: Sign out error");
 				console.log(error);
 			});
 	};
@@ -118,8 +129,8 @@ export default function Header() {
 								New
 							</button>
 						</div>
-						<h1 class="text-white text-md lg:text-md font-bold">
-							{user && "you are logged in"}
+						<h1 class="text-white text-xs font-bold ml-4">
+							Welcome back {userData ? userData.firstName : "..."}
 						</h1>
 					</div>
 					<div class="flex items-center">

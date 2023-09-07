@@ -16,6 +16,7 @@ import SettingsNotifications from "./pages/SettingsNotifications";
 import SettingsPlans from "./pages/SettingsPlans";
 import SettingsBilling from "./pages/SettingsBilling";
 import DarkModeProvider from "./components/context/DarkModeProvider";
+import SignUp from "./pages/SignUp";
 
 function App() {
 	return (
@@ -50,6 +51,7 @@ function App() {
 								element={<SettingsBilling />}
 							/>
 						</Route>
+						<Route path="signup" element={<SignUp />} />
 					</Route>
 				</Routes>
 			</DarkModeProvider>

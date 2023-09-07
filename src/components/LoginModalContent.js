@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
+import { Link } from "react-router-dom";
 
 export default function LoginModalContent({ closeModal }) {
 	const [loginFormData, setLoginFormData] = useState({
@@ -20,11 +21,13 @@ export default function LoginModalContent({ closeModal }) {
 			.then((userCredential) => {
 				const user = userCredential.user;
 				closeModal();
+				console.log("Login Modal User:");
 				console.log(user);
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
+				console.log("Login Modal Error:");
 				console.log(errorCode, errorMessage);
 			});
 	}
@@ -61,6 +64,13 @@ export default function LoginModalContent({ closeModal }) {
 				class="py-2 px-6 m-2 bg-purple-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600">
 				Login
 			</button>
+			<Link to="/signup" onClick={closeModal}>
+				<input
+					type="button"
+					value="Sign Up"
+					class="dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-gray-600 dark:border-gray-600 dark:hover:border-gray-400 text-gray-800 dark:text-gray-100 font-bold py-2 px-4 rounded-lg transition-all"
+				/>
+			</Link>
 			<button
 				onClick={closeModal}
 				class="absolute top-0 right-0 p-4 cursor-pointer hover:text-red-600">
