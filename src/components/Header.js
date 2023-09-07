@@ -47,13 +47,11 @@ export default function Header() {
 	const handleLogout = () => {
 		signOut(auth)
 			.then(() => {
-				// Sign-out successful.
 				console.log("Header: Signed out successfully");
 				setUser(null);
 				setUserData(null);
 			})
 			.catch((error) => {
-				// An error happened.
 				console.log("Header: Sign out error");
 				console.log(error);
 			});
@@ -62,19 +60,16 @@ export default function Header() {
 	function openNewModal() {
 		setNewModal(true);
 		scrollLock.disablePageScroll();
-		console.log("open");
 	}
 
 	function openSupportModal() {
 		setSupportModal(true);
 		scrollLock.disablePageScroll();
-		console.log("open");
 	}
 
 	function openLoginModal() {
 		setLoginModal(true);
 		scrollLock.disablePageScroll();
-		console.log("open");
 	}
 
 	function closeModal() {
@@ -82,7 +77,6 @@ export default function Header() {
 		setSupportModal(false);
 		setLoginModal(false);
 		scrollLock.enablePageScroll();
-		console.log("close");
 	}
 
 	return (

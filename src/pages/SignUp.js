@@ -67,7 +67,7 @@ export default function SignUp() {
 				navigate("/");
 			}
 		});
-	}, []);
+	}, [navigate]);
 
 	return (
 		<div class="w-full h-screen flex flex-col items-center bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
