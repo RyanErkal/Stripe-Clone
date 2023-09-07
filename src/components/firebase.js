@@ -4,9 +4,7 @@ import {
 	collection,
 	doc,
 	getDoc,
-	setDoc,
-	query,
-	where
+	setDoc
 } from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
 
@@ -26,8 +24,6 @@ const db = getFirestore(app);
 
 export const auth = getAuth(app);
 export default app;
-
-const usersCollectionRef = collection(db, "users");
 
 export async function createUser(
 	uid,
