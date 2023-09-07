@@ -40,6 +40,7 @@ export async function createUser(
 	vatNumber
 ) {
 	await setDoc(doc(db, "users", uid), {
+		uid,
 		firstName,
 		lastName,
 		email,
@@ -56,8 +57,7 @@ export async function getUser(uid) {
 	if (docSnap.exists()) {
 		console.log("Document data:");
 		console.log(docSnap.data());
-		const userData = { ...docSnap.data(), uid: docSnap.uid };
-		return userData;
+		return docSnap.data();
 	} else {
 		// docSnap.data() will be undefined in this case
 		console.log("No such document!");

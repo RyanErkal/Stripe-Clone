@@ -50,6 +50,7 @@ export default function Header() {
 				// Sign-out successful.
 				console.log("Header: Signed out successfully");
 				setUser(null);
+				setUserData(null);
 			})
 			.catch((error) => {
 				// An error happened.
@@ -130,7 +131,7 @@ export default function Header() {
 							</button>
 						</div>
 						<h1 class="text-white text-xs font-bold ml-4">
-							Welcome back {userData ? userData.firstName : "..."}
+							{userData && "Welcome back " + userData.firstName}
 						</h1>
 					</div>
 					<div class="flex items-center">
