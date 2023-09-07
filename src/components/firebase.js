@@ -79,3 +79,37 @@ export async function newCustomer(name, email, location, subscription, orders) {
 	});
 	console.log("Document written with ID: ", docRef.id);
 }
+
+export async function getPayments() {
+	const querySnapshot = await getDocs(collection(db, "payments"));
+	const payments = querySnapshot.docs.map((doc) => ({
+		...doc.data(),
+		id: doc.id
+	}));
+	return payments;
+}
+
+export async function newPayment(
+	order,
+	date,
+	name,
+	amount,
+	status,
+	location,
+	items,
+	type,
+	customerID
+) {
+	const docRef = await addDoc(collection(db, "payments"), {
+		order,
+		date,
+		name,
+		amount,
+		status,
+		location,
+		items,
+		type,
+		customerID
+	});
+	console.log("Document written with ID: ", docRef.id);
+}

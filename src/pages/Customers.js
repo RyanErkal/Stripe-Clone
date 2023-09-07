@@ -1,11 +1,29 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getCustomers, newCustomer } from "../components/firebase";
+import { getCustomers } from "../components/firebase";
+import Modal from "react-modal";
+import scrollLock from "scroll-lock";
+import NewCustomerModalContent from "../components/NewCustomerModalContent";
+import "../App.css";
 
 export default function Customers() {
 	const [sort, setSort] = React.useState(null);
 	const [sortDir, setSortDir] = React.useState("ascending");
 	const [customerData, setCustomerData] = React.useState([]);
+	const [newCustomerModal, setNewCustomerModal] = React.useState(false);
+
+	function openNewCustomerModal() {
+		setNewCustomerModal(true);
+		scrollLock.disablePageScroll();
+	}
+
+	function closeNewCustomerModal() {
+		setNewCustomerModal(false);
+		scrollLock.enablePageScroll();
+		getCustomers().then((data) => {
+			setCustomerData(data);
+		});
+	}
 
 	const sortedCustomers = sort
 		? sortArrayOfObjects(customerData, sort, sortDir)
@@ -85,23 +103,38 @@ export default function Customers() {
 	return (
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
-			<div class="m-4">
-				<select
-					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-					onChange={changeSort}>
-					<option value="sortby">Sort by</option>
-					<option value="name">Name</option>
-					<option value="orders">Payments</option>
-					<option value="total">Total Spend</option>
-				</select>
-				<select
-					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-					onChange={changeSortDir}>
-					<option value="ascending">Ascending</option>
-					<option value="descending">Descending</option>
-				</select>
+			<div class="flex justify-between m-4">
+				<div class="">
+					<select
+						class="mx-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						onChange={changeSort}>
+						<option value="sortby">Sort by</option>
+						<option value="name">Name</option>
+						<option value="orders">Payments</option>
+						<option value="total">Total Spend</option>
+					</select>
+					<select
+						class="mx-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						onChange={changeSortDir}>
+						<option value="ascending">Ascending</option>
+						<option value="descending">Descending</option>
+					</select>
+				</div>
+				<input
+					type="button"
+					value="New Customer"
+					onClick={openNewCustomerModal}
+					class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+				/>
 			</div>
-
+			<Modal
+				isOpen={newCustomerModal}
+				onRequestClose={closeNewCustomerModal}
+				className="Modal"
+				overlayClassName="Overlay"
+				contentLabel="New Modal">
+				<NewCustomerModalContent closeModal={closeNewCustomerModal} />
+			</Modal>
 			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6">
 				<thead>
 					<tr class="text-left">

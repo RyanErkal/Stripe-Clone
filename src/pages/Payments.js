@@ -1,21 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import PaymentData from "../data/PaymentData.json";
+import Modal from "react-modal";
+import NewPaymentModalContent from "../components/NewPaymentModalContent";
+import { getPayments } from "../components/firebase";
+import "../App.css";
+import scrollLock from "scroll-lock";
 
 export default function Payments() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [sort, setSort] = React.useState(null);
 	const [sortDir, setSortDir] = React.useState("ascending");
+	const [newPaymentModal, setNewPaymentModal] = React.useState(false);
+	const [paymentData, setPaymentData] = React.useState([]);
+
+	useEffect(() => {
+		getPayments().then((data) => {
+			setPaymentData(data);
+		});
+	}, []);
+
+	function openNewPaymentModal() {
+		setNewPaymentModal(true);
+		scrollLock.disablePageScroll();
+	}
+
+	function closeNewPaymentModal() {
+		setNewPaymentModal(false);
+		scrollLock.enablePageScroll();
+		/* getCustomers().then((data) => {
+			setPaymentData(data);
+		}); */
+	}
 
 	const filter = searchParams.get("status");
 
 	const sortedPayments = sort
-		? sortArrayOfObjects(PaymentData, sort, sortDir)
-		: PaymentData;
+		? sortArrayOfObjects(paymentData, sort, sortDir)
+		: paymentData;
 
 	const filteredPayments = filter
 		? sortedPayments.filter((payment) => payment.status === filter)
-		: PaymentData;
+		: paymentData;
 
 	const paymentList = filteredPayments.map((payment) => (
 		<tr class="text-left" key={payment.name}>
@@ -64,8 +89,8 @@ export default function Payments() {
 	}
 
 	React.useEffect(() => {
-		sortArrayOfObjects(PaymentData, sort, sortDir);
-	}, [sort, sortDir]);
+		sortArrayOfObjects(paymentData, sort, sortDir);
+	}, [sort, sortDir, paymentData]);
 
 	function sortArrayOfObjects(arr, propertyName, order) {
 		const sortedArr = arr.sort((a, b) => {
@@ -86,42 +111,62 @@ export default function Payments() {
 	return (
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
-			<div class="m-4">
-				<button
-					onClick={() => handleFilterChange("status", "succeeded")}
-					class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 text-green-600 transition-all hover:shadow-xl">
-					Succeeded
-				</button>
-				<button
-					onClick={() => handleFilterChange("status", "processing")}
-					class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 text-orange-600 transition-all hover:shadow-xl">
-					Processing
-				</button>
-				<button
-					onClick={() => handleFilterChange("status", "failed")}
-					class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 text-red-600 transition-all hover:shadow-xl">
-					Failed
-				</button>
-				<button
-					onClick={() => handleFilterChange("status", null)}
-					class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-xl">
-					Clear
-				</button>
-				<select
-					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-					onChange={changeSort}>
-					<option value="sortby">Sort by</option>
-					<option value="name">Name</option>
-					<option value="amount">Amount</option>
-					<option value="items">Items</option>
-				</select>
-				<select
-					class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-					onChange={changeSortDir}>
-					<option value="ascending">Ascending</option>
-					<option value="descending">Descending</option>
-				</select>
+			<div class="m-4 flex flex-row justify-between">
+				<div class="">
+					<button
+						onClick={() =>
+							handleFilterChange("status", "succeeded")
+						}
+						class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 text-green-600 transition-all hover:shadow-xl">
+						Succeeded
+					</button>
+					<button
+						onClick={() =>
+							handleFilterChange("status", "processing")
+						}
+						class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 text-orange-600 transition-all hover:shadow-xl">
+						Processing
+					</button>
+					<button
+						onClick={() => handleFilterChange("status", "failed")}
+						class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 text-red-600 transition-all hover:shadow-xl">
+						Failed
+					</button>
+					<button
+						onClick={() => handleFilterChange("status", null)}
+						class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-xl">
+						Clear
+					</button>
+					<select
+						class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						onChange={changeSort}>
+						<option value="sortby">Sort by</option>
+						<option value="name">Name</option>
+						<option value="amount">Amount</option>
+						<option value="items">Items</option>
+					</select>
+					<select
+						class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						onChange={changeSortDir}>
+						<option value="ascending">Ascending</option>
+						<option value="descending">Descending</option>
+					</select>
+				</div>
+				<input
+					type="button"
+					value="New Payment"
+					onClick={openNewPaymentModal}
+					class="px-4 p-2 m-2 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+				/>
 			</div>
+			<Modal
+				isOpen={newPaymentModal}
+				onRequestClose={closeNewPaymentModal}
+				className="Modal"
+				overlayClassName="Overlay"
+				contentLabel="New Modal">
+				<NewPaymentModalContent closeModal={closeNewPaymentModal} />
+			</Modal>
 			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6 overflow-auto">
 				<thead>
 					<tr class="text-left">
