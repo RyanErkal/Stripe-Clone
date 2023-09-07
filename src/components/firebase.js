@@ -1,5 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore/lite";
+import {
+	getFirestore,
+	doc,
+	getDoc,
+	addDoc,
+	setDoc,
+	collection,
+	getDocs
+} from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
@@ -45,11 +53,29 @@ export async function getUser(uid) {
 	const docRef = doc(db, "users", uid);
 	const docSnap = await getDoc(docRef);
 	if (docSnap.exists()) {
-		console.log("Document data:");
-		console.log(docSnap.data());
 		return docSnap.data();
 	} else {
-		// docSnap.data() will be undefined in this case
+		// docSnap.data() will be undefined
 		console.log("No such document!");
 	}
+}
+
+export async function getCustomers() {
+	const querySnapshot = await getDocs(collection(db, "customers"));
+	const customers = querySnapshot.docs.map((doc) => ({
+		...doc.data(),
+		id: doc.id
+	}));
+	return customers;
+}
+
+export async function newCustomer(name, email, location, subscription, orders) {
+	const docRef = await addDoc(collection(db, "customers"), {
+		name,
+		email,
+		location,
+		subscription,
+		orders
+	});
+	console.log("Document written with ID: ", docRef.id);
 }

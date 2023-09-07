@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import CustomerData from "../data/CustomerData.json";
+import { getCustomers, newCustomer } from "../components/firebase";
 
 export default function Customers() {
 	const [sort, setSort] = React.useState(null);
 	const [sortDir, setSortDir] = React.useState("ascending");
+	const [customerData, setCustomerData] = React.useState([]);
 
 	const sortedCustomers = sort
-		? sortArrayOfObjects(CustomerData, sort, sortDir)
-		: CustomerData;
+		? sortArrayOfObjects(customerData, sort, sortDir)
+		: customerData;
 
-	/* React.useEffect(() => {
-		sortArrayOfObjects(CustomerData, sort, sortDir);
-	}, [sort, sortDir]); */
+	useEffect(() => {
+		getCustomers().then((data) => {
+			setCustomerData(data);
+		});
+	}, []);
 
 	function sortArrayOfObjects(arr, propertyName, order) {
 		const sortedArr = arr.sort((a, b) => {

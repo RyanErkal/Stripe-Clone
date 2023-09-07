@@ -29,7 +29,6 @@ export default function Header() {
 			if (user) {
 				const uid = user.uid;
 				setUser(uid);
-				console.log("Header uid:", uid);
 			} else {
 				console.log("Header: user is logged out");
 			}
