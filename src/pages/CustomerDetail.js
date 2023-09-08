@@ -10,6 +10,7 @@ export default function CustomerDetail() {
 			<h3 class="mt-4 text-xl font-bold">
 				Location: {customer.location}
 			</h3>
+			<h3 class="mt-4 text-xl font-bold">Customer ID: {customer.id}</h3>
 		</div>
 	);
 }

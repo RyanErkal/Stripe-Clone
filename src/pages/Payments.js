@@ -47,7 +47,7 @@ export default function Payments() {
 			<td>
 				<input type="checkbox" />
 			</td>
-			<td class="p-4">{payment.order}</td>
+			<td class="p-4">#{payment.order}</td>
 			<td>{payment.date}</td>
 			<td>{payment.name}</td>
 			<td>£{payment.amount}</td>

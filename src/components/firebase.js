@@ -6,7 +6,9 @@ import {
 	addDoc,
 	setDoc,
 	collection,
-	getDocs
+	getDocs,
+	updateDoc,
+	arrayUnion
 } from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
 
@@ -80,6 +82,11 @@ export async function newCustomer(name, email, location, subscription, orders) {
 	console.log("Document written with ID: ", docRef.id);
 }
 
+export async function newCustomerOrder(customerID, order) {
+	const docRef = doc(db, "customers", customerID);
+	await updateDoc(docRef, { orders: arrayUnion(order) });
+}
+
 export async function getPayments() {
 	const querySnapshot = await getDocs(collection(db, "payments"));
 	const payments = querySnapshot.docs.map((doc) => ({
@@ -101,13 +108,13 @@ export async function newPayment(
 	customerID
 ) {
 	const docRef = await addDoc(collection(db, "payments"), {
-		order: `#${order}`,
+		order: parseInt(order),
 		date,
 		name,
-		amount: `£${amount}`,
+		amount: parseInt(amount),
 		status,
 		location,
-		items,
+		items: parseInt(items),
 		type,
 		customerID
 	});

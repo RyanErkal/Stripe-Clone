@@ -78,7 +78,7 @@ export default function Customers() {
 	const customerList = sortedCustomers.map((customer) => (
 		<tr
 			class="text-left hover:text-purple-600 transition-all"
-			key={customer.name}>
+			key={customer.id}>
 			<th>
 				<input type="checkbox" />
 			</th>
