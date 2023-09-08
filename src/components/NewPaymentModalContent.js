@@ -274,7 +274,7 @@ export default function NewPaymentModalContent({ closeModal }) {
 							message: "Please enter a valid type"
 						},
 						pattern: {
-							value: /^[A-Za-z]+$/i,
+							value: /^[A-Za-z\s]*$/,
 							message: "Please enter a valid type"
 						}
 					})}
