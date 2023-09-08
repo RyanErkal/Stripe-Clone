@@ -97,14 +97,14 @@ export async function newPayment(
 	status,
 	location,
 	items,
-	type,
+	type = "one time",
 	customerID
 ) {
 	const docRef = await addDoc(collection(db, "payments"), {
-		order,
+		order: `#${order}`,
 		date,
 		name,
-		amount,
+		amount: `£${amount}`,
 		status,
 		location,
 		items,

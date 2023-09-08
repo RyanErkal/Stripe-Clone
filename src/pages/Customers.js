@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getCustomers } from "../components/firebase";
+import { getCustomers } from "../components/firebase.js";
 import Modal from "react-modal";
 import scrollLock from "scroll-lock";
 import NewCustomerModalContent from "../components/NewCustomerModalContent";

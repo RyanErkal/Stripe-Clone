@@ -5,8 +5,7 @@ import {
 	createUserWithEmailAndPassword,
 	onAuthStateChanged
 } from "firebase/auth";
-import { auth } from "../components/firebase";
-import { createUser } from "../components/firebase";
+import { auth, createUser } from "../components/firebase.js";
 
 export default function SignUp() {
 	const [signUpFormData, setSignUpFormData] = useState({

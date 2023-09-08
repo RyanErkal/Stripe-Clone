@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Modal from "react-modal";
 import NewPaymentModalContent from "../components/NewPaymentModalContent";
-import { getPayments } from "../components/firebase";
+import { getPayments } from "../components/firebase.js";
 import "../App.css";
 import scrollLock from "scroll-lock";
 
@@ -159,14 +159,16 @@ export default function Payments() {
 					class="px-4 p-2 m-2 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 				/>
 			</div>
-			<Modal
-				isOpen={newPaymentModal}
-				onRequestClose={closeNewPaymentModal}
-				className="Modal"
-				overlayClassName="Overlay"
-				contentLabel="New Modal">
-				<NewPaymentModalContent closeModal={closeNewPaymentModal} />
-			</Modal>
+			<div class="w-1/2 bg-red-100">
+				<Modal
+					isOpen={newPaymentModal}
+					onRequestClose={closeNewPaymentModal}
+					className="Modal"
+					overlayClassName="Overlay"
+					contentLabel="New Modal">
+					<NewPaymentModalContent closeModal={closeNewPaymentModal} />
+				</Modal>
+			</div>
 			<table class="table-auto min-w-max text-xs lg:text-base lg:w-full m-6 overflow-auto">
 				<thead>
 					<tr class="text-left">

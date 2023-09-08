@@ -8,10 +8,8 @@ import SupportModalContent from "./SupportModalContent";
 import LoginModalContent from "./LoginModalContent";
 import scrollLock from "scroll-lock";
 import "../App.css";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
-import { signOut } from "firebase/auth";
-import { getUser } from "./firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth, getUser } from "./firebase.js";
 
 Modal.setAppElement(document.getElementById("root"));
 
