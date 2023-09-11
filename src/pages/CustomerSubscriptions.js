@@ -11,20 +11,20 @@ export default function CustomerDetail() {
 				<span
 					class={
 						customer.subscription.plan === "basic"
-							? "text-blue-600 font-bold bg-blue-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-blue-600 font-bold bg-blue-200 py-2 px-4 mx-1 w-min rounded-full text-center"
 							: customer.subscription.plan === "premium"
-							? "text-purple-600 font-bold bg-purple-200 py-2 px-4 w-min rounded-full text-center"
-							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-purple-600 font-bold bg-purple-200 py-2 px-4 mx-1 w-min rounded-full text-center"
+							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 mx-1 w-min rounded-full text-center"
 					}>
 					{customer.subscription.plan}{" "}
 				</span>
 				<span
 					class={
 						customer.subscription.status === "active"
-							? "text-green-600 font-bold bg-green-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-green-600 font-bold bg-green-200 py-2 px-4 mx-1 w-min rounded-full text-center"
 							: customer.subscription.status === "cancelled"
-							? "text-red-600 font-bold bg-red-200 py-2 px-4 w-min rounded-full text-center"
-							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-red-600 font-bold bg-red-200 py-2 px-4 mx-1 w-min rounded-full text-center"
+							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 mx-1 w-min rounded-full text-center"
 					}>
 					{customer.subscription.status}
 				</span>

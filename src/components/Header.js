@@ -28,7 +28,7 @@ export default function Header() {
 				const uid = user.uid;
 				setUser(uid);
 			} else {
-				console.log("Header: user is logged out");
+				/* console.log("Header: user is logged out"); */
 			}
 		});
 	}, []);
@@ -44,12 +44,12 @@ export default function Header() {
 	const handleLogout = () => {
 		signOut(auth)
 			.then(() => {
-				console.log("Header: Signed out successfully");
+				/* console.log("Header: Signed out successfully"); */
 				setUser(null);
 				setUserData(null);
 			})
 			.catch((error) => {
-				console.log("Header: Sign out error");
+				/* console.log("Header: Sign out error"); */
 				console.log(error);
 			});
 	};
