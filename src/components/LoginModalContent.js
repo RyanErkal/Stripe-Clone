@@ -59,6 +59,7 @@ export default function LoginModalContent({ closeModal }) {
 				value={loginFormData.password}
 				class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 			/>
+			<p class="text-sm text-gray-500">test5@demo.com 123456</p>
 			<button
 				onClick={(e) => handleSubmit(e)}
 				class="py-2 px-6 m-2 bg-purple-600 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600">
