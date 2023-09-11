@@ -153,8 +153,8 @@ export default function Customers() {
 				<div class="basis-1/2 justify-start">
 					<span class="text-sm text-gray-600 dark:text-gray-400">
 						Showing <span class="font-semibold">1</span> to{" "}
-						<span class="font-semibold">5</span> of{" "}
-						<span class="font-semibold">100</span> results
+						<span class="font-semibold">{customerList.length}</span>{" "}
+						of <span class="font-semibold">100</span> results
 					</span>
 				</div>
 
@@ -198,6 +198,3 @@ export default function Customers() {
 		</>
 	);
 }
-
-// shared UI navbar
-// csutomer profile

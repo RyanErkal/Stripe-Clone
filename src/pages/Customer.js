@@ -12,11 +12,14 @@ import Modal from "react-modal";
 import scrollLock from "scroll-lock";
 import "../App.css";
 import NewCustomerPaymentModalContent from "../components/NewCustomerPaymentModalContent";
+import NewCustomerSubscriptionModalContent from "../components/NewCustomerSubscriptionModalContent";
 
 export default function Customer() {
 	const customer = useLocation().state;
 	const { darkMode } = useContext(DarkMode);
 	const [newCustomerPaymentModal, setNewCustomerPaymentModal] =
+		useState(false);
+	const [newCustomerSubscriptionModal, setNewCustomerSubscriptionModal] =
 		useState(false);
 
 	const activeStyle = {
@@ -43,8 +46,14 @@ export default function Customer() {
 		scrollLock.disablePageScroll();
 	}
 
+	function openNewCustomerSubscriptionModal() {
+		setNewCustomerSubscriptionModal(true);
+		scrollLock.disablePageScroll();
+	}
+
 	function closeModal() {
 		setNewCustomerPaymentModal(false);
+		setNewCustomerSubscriptionModal(false);
 		scrollLock.enablePageScroll();
 	}
 
@@ -87,12 +96,20 @@ export default function Customer() {
 						Subscriptions
 					</NavLink>
 				</div>
-				<input
-					type="button"
-					value="New Customer Payment"
-					onClick={openNewCustomerPaymentModal}
-					class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
-				/>
+				<div>
+					<input
+						type="button"
+						value="New Customer Payment"
+						onClick={openNewCustomerPaymentModal}
+						class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					/>
+					<input
+						type="button"
+						value="New Subscription"
+						onClick={openNewCustomerSubscriptionModal}
+						class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					/>
+				</div>
 				<Modal
 					isOpen={newCustomerPaymentModal}
 					onRequestClose={closeModal}
@@ -100,6 +117,17 @@ export default function Customer() {
 					overlayClassName="Overlay"
 					contentLabel="New Customer Payment Modal">
 					<NewCustomerPaymentModalContent
+						closeModal={closeModal}
+						customer={customer}
+					/>
+				</Modal>
+				<Modal
+					isOpen={newCustomerSubscriptionModal}
+					onRequestClose={closeModal}
+					className="Modal"
+					overlayClassName="Overlay"
+					contentLabel="New Customer Subscription Modal">
+					<NewCustomerSubscriptionModalContent
 						closeModal={closeModal}
 						customer={customer}
 					/>

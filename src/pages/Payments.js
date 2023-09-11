@@ -14,6 +14,7 @@ export default function Payments() {
 	const [paymentData, setPaymentData] = React.useState([]);
 
 	useEffect(() => {
+		/* console.log("useEffect get payments"); */
 		getPayments().then((data) => {
 			setPaymentData(data);
 		});
@@ -81,14 +82,17 @@ export default function Payments() {
 	}
 
 	function changeSort(e) {
+		/* console.log("change sort"); */
 		setSort(e.target.value);
 	}
 
 	function changeSortDir(e) {
+		/* console.log("chnage sort dir"); */
 		setSortDir(e.target.value);
 	}
 
 	React.useEffect(() => {
+		/* console.log("useEffect sort"); */
 		sortArrayOfObjects(paymentData, sort, sortDir);
 	}, [sort, sortDir, paymentData]);
 
@@ -191,8 +195,8 @@ export default function Payments() {
 				<div class="basis-1/2 justify-start">
 					<span class="text-sm text-gray-600 dark:text-gray-400">
 						Showing <span class="font-semibold">1</span> to{" "}
-						<span class="font-semibold">10</span> of{" "}
-						<span class="font-semibold">100</span> results
+						<span class="font-semibold">{paymentList.length}</span>{" "}
+						of <span class="font-semibold">100</span> results
 					</span>
 				</div>
 

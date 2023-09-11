@@ -7,7 +7,17 @@ export default function CustomerDetail() {
 	return (
 		<div class="m-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-xl">
 			<h3 class="mt-4 text-xl font-bold">
-				Plan: {customer.subscription.plan}{" "}
+				Plan:
+				<span
+					class={
+						customer.subscription.plan === "basic"
+							? "text-blue-600 font-bold bg-blue-200 py-2 px-4 w-min rounded-full text-center"
+							: customer.subscription.plan === "premium"
+							? "text-purple-600 font-bold bg-purple-200 py-2 px-4 w-min rounded-full text-center"
+							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 w-min rounded-full text-center"
+					}>
+					{customer.subscription.plan}{" "}
+				</span>
 				<span
 					class={
 						customer.subscription.status === "active"

@@ -51,27 +51,7 @@ export default function NewCustomerModalContent({ closeModal }) {
 	return (
 		<div class="w-full h-full py-4 px-8 lg:py-16 lg:px-32 flex flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
 			<h1 class="text-2xl font-bold">New Customer</h1>
-			<ErrorMessage
-				errors={errors}
-				name="name"
-				render={({ message }) => (
-					<p class="font-bold text-sm text-red-500">{message}</p>
-				)}
-			/>
-			<ErrorMessage
-				errors={errors}
-				name="email"
-				render={({ message }) => (
-					<p class="font-bold text-sm text-red-500">{message}</p>
-				)}
-			/>
-			<ErrorMessage
-				errors={errors}
-				name="location"
-				render={({ message }) => (
-					<p class="font-bold text-sm text-red-500">{message}</p>
-				)}
-			/>
+
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				class="w-full h-full flex flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
@@ -98,6 +78,13 @@ export default function NewCustomerModalContent({ closeModal }) {
 					})}
 					class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 				/>
+				<ErrorMessage
+					errors={errors}
+					name="name"
+					render={({ message }) => (
+						<p class="font-bold text-sm text-red-500">{message}</p>
+					)}
+				/>
 				<input
 					type="text"
 					placeholder="Email"
@@ -121,6 +108,13 @@ export default function NewCustomerModalContent({ closeModal }) {
 					})}
 					class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 				/>
+				<ErrorMessage
+					errors={errors}
+					name="email"
+					render={({ message }) => (
+						<p class="font-bold text-sm text-red-500">{message}</p>
+					)}
+				/>
 				<input
 					type="text"
 					placeholder="Location"
@@ -143,6 +137,13 @@ export default function NewCustomerModalContent({ closeModal }) {
 						}
 					})}
 					class="p-2 m-2 w-full dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+				/>
+				<ErrorMessage
+					errors={errors}
+					name="location"
+					render={({ message }) => (
+						<p class="font-bold text-sm text-red-500">{message}</p>
+					)}
 				/>
 				<button
 					onClick={(e) => handleSubmit(e)}

@@ -87,6 +87,11 @@ export async function newCustomerOrder(customerID, order) {
 	await updateDoc(docRef, { orders: arrayUnion(order) });
 }
 
+export async function newCustomerSubscription(customerID, subscription) {
+	const docRef = doc(db, "customers", customerID);
+	await updateDoc(docRef, { subscription: subscription });
+}
+
 export async function getPayments() {
 	const querySnapshot = await getDocs(collection(db, "payments"));
 	const payments = querySnapshot.docs.map((doc) => ({
@@ -119,4 +124,13 @@ export async function newPayment(
 		customerID
 	});
 	console.log("Document written with ID: ", docRef.id);
+}
+
+export async function getPayouts() {
+	const querySnapshot = await getDocs(collection(db, "payouts"));
+	const payouts = querySnapshot.docs.map((doc) => ({
+		...doc.data(),
+		id: doc.id
+	}));
+	return payouts;
 }
