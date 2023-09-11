@@ -104,7 +104,7 @@ export default function Customers() {
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
 			<div class="flex justify-between m-4">
-				<div class="">
+				<div class="flex">
 					<select
 						class="mx-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 						onChange={changeSort}>
@@ -124,7 +124,7 @@ export default function Customers() {
 					type="button"
 					value="New Customer"
 					onClick={openNewCustomerModal}
-					class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					class="mx-2 py-2 px-4 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 				/>
 			</div>
 			<Modal

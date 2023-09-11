@@ -68,7 +68,7 @@ export default function Customer() {
 					Back to Customers
 				</Link>
 			</div>
-			<div class="m-6 flex justify-between">
+			<div class="m-6 flex flex-col lg:flex-row justify-between">
 				<div>
 					<NavLink
 						to=""
@@ -96,12 +96,12 @@ export default function Customer() {
 						Subscriptions
 					</NavLink>
 				</div>
-				<div>
+				<div class="mt-4 lg:mt-0 flex lg:flex-row">
 					<input
 						type="button"
 						value="New Customer Payment"
 						onClick={openNewCustomerPaymentModal}
-						class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+						class="mr-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 					/>
 					<input
 						type="button"

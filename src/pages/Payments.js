@@ -116,7 +116,7 @@ export default function Payments() {
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
 			<div class="m-4 flex flex-row justify-between">
-				<div class="">
+				<div class="flex">
 					<button
 						onClick={() =>
 							handleFilterChange("status", "succeeded")
@@ -160,7 +160,7 @@ export default function Payments() {
 					type="button"
 					value="New Payment"
 					onClick={openNewPaymentModal}
-					class="px-4 p-2 m-2 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					class="px-4 p-2 m-2 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 				/>
 			</div>
 			<div class="w-1/2 bg-red-100">
