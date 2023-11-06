@@ -82,17 +82,14 @@ export default function Payments() {
 	}
 
 	function changeSort(e) {
-		/* console.log("change sort"); */
 		setSort(e.target.value);
 	}
 
 	function changeSortDir(e) {
-		/* console.log("chnage sort dir"); */
 		setSortDir(e.target.value);
 	}
 
 	React.useEffect(() => {
-		/* console.log("useEffect sort"); */
 		sortArrayOfObjects(paymentData, sort, sortDir);
 	}, [sort, sortDir, paymentData]);
 
@@ -116,33 +113,33 @@ export default function Payments() {
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
 			<div class="m-4 flex flex-row justify-between">
-				<div class="flex">
+				<div class="flex flex-wrap">
 					<button
 						onClick={() =>
 							handleFilterChange("status", "succeeded")
 						}
-						class="bg-green-200 font-bold px-4 p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 text-green-600 transition-all hover:shadow-lg">
+						class="bg-green-200 font-bold text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 border border-green-300 rounded-full hover:bg-green-300 text-green-600 transition-all hover:shadow-lg">
 						Succeeded
 					</button>
 					<button
 						onClick={() =>
 							handleFilterChange("status", "processing")
 						}
-						class="bg-orange-200 font-bold px-4 p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 text-orange-600 transition-all hover:shadow-lg">
+						class="bg-orange-200 font-bold text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 border border-orange-300 rounded-full hover:bg-orange-300 text-orange-600 transition-all hover:shadow-lg">
 						Processing
 					</button>
 					<button
 						onClick={() => handleFilterChange("status", "failed")}
-						class="bg-red-200 font-bold px-4 p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 text-red-600 transition-all hover:shadow-lg">
+						class="bg-red-200 font-bold text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 border border-red-300 rounded-full hover:bg-red-300 text-red-600 transition-all hover:shadow-lg">
 						Failed
 					</button>
 					<button
 						onClick={() => handleFilterChange("status", null)}
-						class="bg-gray-200 font-bold px-4 p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-lg">
+						class="bg-gray-200 font-bold text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 border border-gray-300 rounded-full hover:bg-gray-300 text-gray-600 transition-all hover:shadow-lg">
 						Clear
 					</button>
 					<select
-						class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						class="m-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 						onChange={changeSort}>
 						<option value="sortby">Sort by</option>
 						<option value="name">Name</option>
@@ -150,7 +147,7 @@ export default function Payments() {
 						<option value="items">Items</option>
 					</select>
 					<select
-						class="m-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						class="m-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 						onChange={changeSortDir}>
 						<option value="ascending">Ascending</option>
 						<option value="descending">Descending</option>
@@ -160,7 +157,7 @@ export default function Payments() {
 					type="button"
 					value="New Payment"
 					onClick={openNewPaymentModal}
-					class="px-4 p-2 m-2 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					class="text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 				/>
 			</div>
 			<div class="w-1/2 bg-red-100">

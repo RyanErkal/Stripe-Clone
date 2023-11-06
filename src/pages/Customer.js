@@ -64,7 +64,7 @@ export default function Customer() {
 			<div class="m-4">
 				<Link
 					to="/customers"
-					class="bg-purple-200 font-bold px-4 p-2 m-2 border border-purple-300 rounded-full hover:bg-purple-300 dark:text-purple-600 transition-all">
+					class="bg-purple-200 font-bold text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 m-2 border border-purple-300 rounded-full hover:bg-purple-300 dark:text-purple-600 transition-all">
 					Back to Customers
 				</Link>
 			</div>
@@ -72,6 +72,7 @@ export default function Customer() {
 				<div>
 					<NavLink
 						to=""
+						className="text-sm md:text-lg"
 						style={({ isActive }) =>
 							isActive ? activeStyle : inactiveStyle
 						}
@@ -81,6 +82,7 @@ export default function Customer() {
 					</NavLink>
 					<NavLink
 						to="payments"
+						className="text-sm md:text-lg"
 						style={({ isActive }) =>
 							isActive ? activeStyle : inactiveStyle
 						}
@@ -89,6 +91,7 @@ export default function Customer() {
 					</NavLink>
 					<NavLink
 						to="subscriptions"
+						className="text-sm md:text-lg"
 						style={({ isActive }) =>
 							isActive ? activeStyle : inactiveStyle
 						}
@@ -96,18 +99,18 @@ export default function Customer() {
 						Subscriptions
 					</NavLink>
 				</div>
-				<div class="mt-4 lg:mt-0 flex lg:flex-row">
+				<div class="mt-4 lg:mt-0 flex lg:flex-row flex-wrap">
 					<input
 						type="button"
 						value="New Customer Payment"
 						onClick={openNewCustomerPaymentModal}
-						class="mr-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+						class="mr-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 					/>
 					<input
 						type="button"
 						value="New Subscription"
 						onClick={openNewCustomerSubscriptionModal}
-						class="mx-2 py-2 px-4 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+						class="mx-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 					/>
 				</div>
 				<Modal

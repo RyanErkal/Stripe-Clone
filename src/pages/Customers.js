@@ -104,9 +104,9 @@ export default function Customers() {
 		<>
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
 			<div class="flex justify-between m-4">
-				<div class="flex">
+				<div class="flex flex-wrap">
 					<select
-						class="mx-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						class="mx-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 						onChange={changeSort}>
 						<option value="sortby">Sort by</option>
 						<option value="name">Name</option>
@@ -114,7 +114,7 @@ export default function Customers() {
 						<option value="total">Total Spend</option>
 					</select>
 					<select
-						class="mx-2 py-2 px-4 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+						class="mx-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 dark:bg-gray-700 dark:text-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
 						onChange={changeSortDir}>
 						<option value="ascending">Ascending</option>
 						<option value="descending">Descending</option>
@@ -124,7 +124,7 @@ export default function Customers() {
 					type="button"
 					value="New Customer"
 					onClick={openNewCustomerModal}
-					class="mx-2 py-2 px-4 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
+					class="mx-2 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 h-min dark:bg-gray-800 bg-gray-100 border border-gray-400 hover:border-purple-600 text-gray-800 dark:text-gray-100 font-bold rounded-lg transition-all"
 				/>
 			</div>
 			<Modal

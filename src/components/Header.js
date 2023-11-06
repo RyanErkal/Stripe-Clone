@@ -111,7 +111,7 @@ export default function Header() {
 
 				<div class="flex justify-between items-center px-4 py-2">
 					<div class="flex items-center">
-						<h1 class="text-white text-xl lg:text-2xl font-bold">
+						<h1 class="text-white text-xl sm:text-2xl font-bold">
 							Stripe
 						</h1>
 						<div class="ml-2 xl:ml-4">
@@ -125,7 +125,7 @@ export default function Header() {
 							{userData && "Welcome back " + userData.firstName}
 						</h1>
 					</div>
-					<div class="flex items-center">
+					<div class="hidden xs:flex items-center">
 						<div class="mr-2 xl:mr-4 flex align-center">
 							<label class="relative inline-flex items-center cursor-pointer">
 								<input

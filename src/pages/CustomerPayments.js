@@ -11,10 +11,10 @@ export default function CustomerDetail() {
 				<div
 					class={
 						order.status === "succeeded"
-							? "text-green-600 font-bold bg-green-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-green-600 font-bold bg-green-200 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 w-min rounded-full text-center"
 							: order.status === "failed"
-							? "text-red-600 font-bold bg-red-200 py-2 px-4 w-min rounded-full text-center"
-							: "text-orange-600 font-bold bg-orange-200 py-2 px-4 w-min rounded-full text-center"
+							? "text-red-600 font-bold bg-red-200 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 w-min rounded-full text-center"
+							: "text-orange-600 font-bold bg-orange-200 text-sm px-2 py-1 md:text-lg md:px-4 md:p-2 w-min rounded-full text-center"
 					}>
 					{order.status}
 				</div>

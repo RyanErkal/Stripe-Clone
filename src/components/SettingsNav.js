@@ -31,7 +31,7 @@ export default function SettingsNav() {
 	};
 
 	return (
-		<div class="pt-2 flex flex-row lg:flex-col h-min lg:h-full dark:bg-gray-800 dark:text-gray-100 border-r border-gray-400 overflow-auto">
+		<div class="pt-2 flex flex-row xl:flex-col h-min xl:h-full dark:bg-gray-800 dark:text-gray-100 border-none xl:border xl:border-r xl:border-gray-400">
 			<NavLink
 				to=""
 				style={({ isActive }) =>
