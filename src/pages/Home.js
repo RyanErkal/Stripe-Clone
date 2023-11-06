@@ -9,7 +9,7 @@ import ReNegBar from "../components/charts/ReNegBar";
 
 export default function Home() {
 	return (
-		<div class="min-h-max min-w-max bg-gray-100 dark:bg-gray-900">
+		<div class="min-h-max min-w-max bg-gray-100 dark:bg-gray-900 w-full xl:max-w-7xl">
 			<h1 class="text-3xl font-bold p-4">Dashboard</h1>
 			{/* Teirs Sales */}
 			<div class="grid grid-cols-12 gap-4 m-4 bg-gray-100 dark:bg-gray-900">

@@ -110,7 +110,7 @@ export default function Payments() {
 	}
 
 	return (
-		<>
+		<div class="w-full xl:max-w-7xl">
 			<h1 class="text-3xl font-bold m-4 p-4">Payments</h1>
 			<div class="m-4 flex flex-row justify-between">
 				<div class="flex flex-wrap">
@@ -234,6 +234,6 @@ export default function Payments() {
 					</button>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

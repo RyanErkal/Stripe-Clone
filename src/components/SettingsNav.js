@@ -8,32 +8,31 @@ export default function SettingsNav() {
 
 	const activeStyle = {
 		color: "#a78bfa",
-		margin: "2px",
-		padding: "6px 4px 6px 12px",
 		fontWeight: "bold",
-		width: "100%",
 		textAlign: "left",
 		backgroundColor: "rgba(147, 51, 234, 0.1)",
 		borderRadius: "10px",
 		fill: "currentColor",
-		display: "flex"
+		display: "flex",
+		transition: "all 0.2s ease-in-out",
+		padding: "0.5rem"
 	};
 
 	const inactiveStyle = {
 		color: darkMode ? "#f3f4f6" : "#111827",
-		margin: "2px",
-		padding: "6px 4px 6px 12px",
 		fontWeight: "bold",
-		width: "100%",
 		textAlign: "left",
 		fill: "currentColor",
-		display: "flex"
+		display: "flex",
+		transition: "all 0.2s ease-in-out",
+		padding: "0.5rem"
 	};
 
 	return (
-		<div class="pt-2 flex flex-row xl:flex-col h-min xl:h-full dark:bg-gray-800 dark:text-gray-100 border-none xl:border xl:border-r xl:border-gray-400">
+		<div class="pt-2 flex flex-row flex-wrap xl:flex-col h-min xl:h-full dark:bg-gray-800 dark:text-gray-100 border-none xl:border xl:border-r xl:border-gray-400">
 			<NavLink
 				to=""
+				class="px-2 py-1 xl:px-4 xl:py-2"
 				style={({ isActive }) =>
 					isActive ? activeStyle : inactiveStyle
 				}
@@ -50,6 +49,7 @@ export default function SettingsNav() {
 			</NavLink>
 			<NavLink
 				to="notifications"
+				class="px-2 py-1 xl:px-4 xl:py-2"
 				style={({ isActive }) =>
 					isActive ? activeStyle : inactiveStyle
 				}>
@@ -65,6 +65,7 @@ export default function SettingsNav() {
 			</NavLink>
 			<NavLink
 				to="plans"
+				class="px-2 py-1 xl:px-4 xl:py-2"
 				style={({ isActive }) =>
 					isActive ? activeStyle : inactiveStyle
 				}>
@@ -80,6 +81,7 @@ export default function SettingsNav() {
 			</NavLink>
 			<NavLink
 				to="billing"
+				class="px-2 py-1 xl:px-4 xl:py-2"
 				style={({ isActive }) =>
 					isActive ? activeStyle : inactiveStyle
 				}>

@@ -101,7 +101,7 @@ export default function Customers() {
 	));
 
 	return (
-		<>
+		<div class="w-full xl:max-w-7xl">
 			<h1 class="text-3xl font-bold m-4 p-4">Customers</h1>
 			<div class="flex justify-between m-4">
 				<div class="flex flex-wrap">
@@ -195,6 +195,6 @@ export default function Customers() {
 					</button>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
